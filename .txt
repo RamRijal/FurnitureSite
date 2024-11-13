@@ -1,0 +1,9 @@
+color schemes:
+
+[#292e76] --> dark blue
+#2d372f --> darkgray
+#1d6961 --> dark green
+#51b7ae --> light green
+#fccf17 --> light yellow
+#fec20f --> dark yellow
+#edebd9 --> creamy beige
