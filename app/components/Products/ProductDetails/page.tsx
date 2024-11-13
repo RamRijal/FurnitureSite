@@ -1,4 +1,7 @@
+import Image from 'next/image'
 import React from 'react'
+import Cart from '/public/cart-shopping-svgrepo-com.svg'
+// import Dropdown from '/public/down-chevron-svgrepo-com.svg'
 
 const ProductDetails = () => {
   return (
@@ -6,10 +9,11 @@ const ProductDetails = () => {
       <section className=" bg-gray-900 max-w-full">
         <div className="relative bg-white sm:p-10 xl:p-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-10 xl:gap-x-20">
+            {/* ImageDisplay */}
             <div className="relative lg:col-span-5">
-              <img className="object-cover w-full h-full sm:rounded-md" src="https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+              <img className="ml-8 object-cover w-full h-full sm:rounded-md" src="https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
 
-              <div className="absolute -translate-x-1/2 left-1/2 bottom-6">
+              <div className="absolute ml-8 -translate-x-1/2 left-1/2 bottom-6">
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
                   <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
@@ -21,6 +25,7 @@ const ProductDetails = () => {
             </div>
 
             <div className="px-4 pb-8 lg:col-span-7 xl:pr-16">
+              {/* Breadcrumbs */}
               <nav className="flex">
                 <ol role="list" className="flex items-center space-x-1">
                   <li>
@@ -46,49 +51,70 @@ const ProductDetails = () => {
                   </li>
                 </ol>
               </nav>
-              <div className="flex justify-between items-center  ">
+              {/* Headings */}
+              <div className="lg:flex justify-between items-center  ">
                 <div className="flex flex-col">
                   <h1 className="mt-8 text-3xl font-bold text-gray-900 sm:text-4xl">John Walkers Sofa</h1>
                   <p className='text-gray-400 mt-3'>Limited aesthetic piece</p>
                 </div>
-                <div className="py-2 sm:px-5 sm:py-4">
-                  <p className="text-5xl font-normal text-green-700">$49.00</p>
+                <div className="pt-4 sm:px-5 sm:py-4">
+                  <p className="text-5xl font-semibold lg:font-semibold text-green-700">$49.00</p>
                 </div>
               </div>
+              {/* Details */}
               <div className="inline-grid grid-cols-2 gap-4 my-6 sm:grid-cols-3 sm:gap-0">
-                <div className="rounded-lg bg-gray-50 sm:rounded-r-none">
+                {/* color */}
+                <div className="rounded-lg  bg-gray-50 sm:rounded-r-none">
                   <div className="px-5 py-4">
                     <p className="text-xs font-medium tracking-widest text-gray-500 uppercase">Color</p>
-                    <div className="relative mt-1">
-                      <select name="" id="" className="block w-full py-1 pl-0 pr-8 font-medium text-gray-900 bg-transparent border-none appearance-none">
-                        <option value="">White</option>
+                    <div className="relative mt-1 flex items-center space-x-2">
+                      {/* Color Circle */}
+                      <div className="px-2 w-5 h-5 rounded-full" style={{ backgroundColor: 'white', border: '1px solid #ccc' }}></div>
+                      {/* Dropdown for Colors */}
+                      <select
+                        name="color"
+                        id="color"
+                        className="block w-full py-1 pl-2 pr-8 font-medium text-gray-900 bg-transparent border-none hover:border-none focus:border-none appearance-none"
+                      >
+                        <option className='p-2' value="white">White</option>
+                        <option className='p-2' value="red">Red</option>
+                        <option className='p-2' value="blue">Blue</option>
                       </select>
+
                     </div>
                   </div>
                 </div>
 
+                {/* size */}
                 <div className="rounded-lg bg-gray-50 sm:rounded-none">
                   <div className="px-5 py-4">
                     <p className="text-xs font-medium tracking-widest text-gray-500 uppercase">Size</p>
                     <div className="relative mt-1">
                       <select name="" id="" className="block w-full py-1 pl-0 pr-8 font-medium text-gray-900 bg-transparent border-none appearance-none">
-                        <option value="">40</option>
+                        <option value="40">40</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
                       </select>
                     </div>
                   </div>
                 </div>
 
-
               </div>
+              {/* BUTTONS */}
 
-              <div className="mt-5 sm:mt-8 sm:flex sm:items-center sm:space-x-5">
+              <div className=''>
+                <h1 className=' font-semibold text-xl text-gray-900'>No of items:</h1>
+                <input className='my-2 p-2 max-w-36 bg-gray-100 border-2 rounded-md text-gray-800 text-xl' type='number'></input>
+              </div>
+              <div className="mt-5 sm:mt-5 sm:flex sm:items-center sm:space-x-5">
                 <button
                   type="button"
-                  className="
+                  className="flex
+                  gap-2
                                 items-center
                                 justify-center
                                 w-full
-                                px-12
+                                px-7
                                 py-3
                                 text-base
                                 font-bold
@@ -102,10 +128,10 @@ const ProductDetails = () => {
                                 inlin-flex
                                 sm:w-auto
                                 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
-                                hover:bg-gray-700
+                                hover:bg-[#383fa0]
                             "
                 >
-                  Add to cart
+                  <Image width={20} height={20} src={Cart} alt='' /> Add to cart
                 </button>
 
                 <button
@@ -128,19 +154,18 @@ const ProductDetails = () => {
                                 border border-gray-300
                                 rounded-md
                                 sm:mt-0 sm:w-auto
-                                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
-                                hover:border-gray-900 hover:bg-gray-900
-                                focus:border-gray-900 focus:bg-gray-900 focus:text-white
+                                 hover:bg-pink-600
+                                focus:border-gray-300 focus:bg-white focus:text-gray-900
                                 hover:text-white
                             "
                 >
-                  <svg className="w-5 h-5 mr-2.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 mr-2.5 focus:bg-pink-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                   Add to wishlist
                 </button>
               </div>
-
+              {/* Desciptions */}
               <h1 className='mt-8 text-2xl text-gray-700 font-bold'>Description</h1>
               <hr className='mt-3'></hr>
               <p className="mt-5 text-base font-normal leading-7 text-gray-700">
@@ -154,7 +179,7 @@ const ProductDetails = () => {
                   <li>Quality control by JC</li>
                 </ul>
               </div>
-
+              {/* MOBILE */}
               <div className="hidden mt-10 rounded bg-gray-50">
                 <div className="px-5 py-4">
                   <div className="flex items-center">
@@ -187,7 +212,7 @@ const ProductDetails = () => {
                     </div>
 
                     <div className="pl-5">
-                      <p className="text-3xl font-bold text-gray-900">$49.00</p>
+                      <p className=" text-3xl font-bold text-gray-900">$49.00</p>
                     </div>
                   </div>
                 </div>
@@ -196,7 +221,7 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          
+
         </div>
       </section>
 
