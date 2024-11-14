@@ -11,9 +11,10 @@ const ProductDetails = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-10 xl:gap-x-20">
             {/* ImageDisplay */}
             <div className="relative lg:col-span-5">
-              <img className="ml-8 object-cover w-full h-full sm:rounded-md" src="https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+              <img className="lg:ml-8 object-cover p-4 lg:w-full lg:h-full sm:rounded-md" src="https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
 
-              <div className="absolute ml-8 -translate-x-1/2 left-1/2 bottom-6">
+                  <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
+              <div className="absolute lg:ml-8 p-4 -translate-x-1/2 left-1/2 bottom-6">
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
                   <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>

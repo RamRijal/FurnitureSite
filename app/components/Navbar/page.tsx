@@ -90,22 +90,23 @@ const NavBar = () => {
                     </div>
 
                     {/* NAVIGATION LINKS MOBILE */}
-                    <nav className='lg:hidden '>
-                        <div className="px-1 py-8">
-                            <div className="grid gap-y-7">
-                                <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Home </a>
+                    {expand ? (
+                        <nav className='lg:hidden '>
+                            <div className="px-1 py-8">
+                                <div className="grid gap-y-7">
+                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Home </a>
 
-                                <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Products </a>
+                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Products </a>
 
-                                <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> About </a>
+                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> About </a>
 
-                                <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Contact </a>
-                                <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Login </a>
+                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Contact </a>
+                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Login </a>
 
-                                <a
-                                    href="#"
-                                    title=""
-                                    className="
+                                    <a
+                                        href="#"
+                                        title=""
+                                        className="
                                 bg-[#292e76]
                             inline-flex
                             items-center
@@ -125,13 +126,14 @@ const NavBar = () => {
                             hover:bg-gray-900 hover:text-white
                             focus:bg-gray-900 focus:text-white
                         "
-                                    role="button"
-                                >
-                                    Add to cart
-                                </a>
+                                        role="button"
+                                    >
+                                        Add to cart
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    </nav>
+                        </nav>
+                    ) : ""}
                 </div>
             </header >
 
