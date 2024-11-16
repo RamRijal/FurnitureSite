@@ -1,9 +1,15 @@
 import Image from 'next/image'
 import React from 'react'
 import Cart from '/public/cart-shopping-svgrepo-com.svg'
+import { Product } from '@/types/product'
+import Link from 'next/link';
 // import Dropdown from '/public/down-chevron-svgrepo-com.svg'
 
-const ProductDetails = () => {
+interface IproductsProps {
+  product: Product;
+}
+
+const ProductDetails = ({ product }: IproductsProps) => {
   return (
     <>
       <section className=" bg-gray-900 max-w-full">
@@ -13,7 +19,7 @@ const ProductDetails = () => {
             <div className="relative lg:col-span-5">
               <img className="lg:ml-8 object-cover p-4 lg:w-full lg:h-full sm:rounded-md" src="https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
 
-                  <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
+              <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
               <div className="absolute lg:ml-8 p-4 -translate-x-1/2 left-1/2 bottom-6">
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
@@ -31,14 +37,14 @@ const ProductDetails = () => {
                 <ol role="list" className="flex items-center space-x-1">
                   <li>
                     <div className="-m-1">
-                      <a href="#" className="p-1 text-sm  font-medium text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700"> Home  &gt; </a>
+                      <Link href="/" className="p-1 text-sm  font-medium text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700"> Home  &gt; </Link>
                     </div>
                   </li>
 
                   <li>
                     <div className="flex items-center">
                       <div className="-m-1">
-                        <a href="#" className="p-1 ml-1 text-sm font-medium text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700"> Products  &gt; </a>
+                        <Link href="/products" className="p-1 ml-1 text-sm font-medium text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700"> Products  &gt; </Link>
                       </div>
                     </div>
                   </li>
@@ -46,7 +52,14 @@ const ProductDetails = () => {
                   <li>
                     <div className="flex items-center">
                       <div className="-m-1">
-                        <a href="#" className="p-1 ml-1 text-sm font-medium text-gray-400 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700" aria-current="page"> Sofa </a>
+                        <Link href="#" className="p-1 ml-1 text-sm font-medium text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700" aria-current="page"> {product.category} &gt; </Link>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="flex items-center">
+                      <div className="-m-1">
+                        <Link href="#" className="p-1 ml-1 text-sm font-medium text-gray-400 rounded-md focus:outline-none focus:ring-2 focus:text-gray-900 focus:ring-gray-900 hover:text-gray-700" aria-current="page"> {product.name} </Link>
                       </div>
                     </div>
                   </li>
@@ -55,11 +68,11 @@ const ProductDetails = () => {
               {/* Headings */}
               <div className="lg:flex justify-between items-center  ">
                 <div className="flex flex-col">
-                  <h1 className="mt-8 text-3xl font-bold text-gray-900 sm:text-4xl">John Walkers Sofa</h1>
+                  <h1 className="mt-8 text-3xl font-bold text-gray-900 sm:text-4xl">{product.name}</h1>
                   <p className='text-gray-400 mt-3'>Limited aesthetic piece</p>
                 </div>
                 <div className="pt-4 sm:px-5 sm:py-4">
-                  <p className="text-5xl font-semibold lg:font-semibold text-green-700">$49.00</p>
+                  <p className="text-5xl font-semibold lg:font-semibold text-green-700">${product.price}</p>
                 </div>
               </div>
               {/* Details */}
@@ -69,18 +82,13 @@ const ProductDetails = () => {
                   <div className="px-5 py-4">
                     <p className="text-xs font-medium tracking-widest text-gray-500 uppercase">Color</p>
                     <div className="relative mt-1 flex items-center space-x-2">
-                      {/* Color Circle */}
-                      <div className="px-2 w-5 h-5 rounded-full" style={{ backgroundColor: 'white', border: '1px solid #ccc' }}></div>
-                      {/* Dropdown for Colors */}
-                      <select
-                        name="color"
+                      <div className="px-2 w-5 h-5 rounded-full" style={{ backgroundColor: `${product.feature?.color}`, border: '1px solid #ccc' }}></div>
+                      <p
                         id="color"
-                        className="block w-full py-1 pl-2 pr-8 font-medium text-gray-900 bg-transparent border-none hover:border-none focus:border-none appearance-none"
+                        className="block w-full p-2 py-1 pl-2 pr-8 font-medium text-gray-900 bg-transparent border-none hover:border-none focus:border-none appearance-none"
                       >
-                        <option className='p-2' value="white">White</option>
-                        <option className='p-2' value="red">Red</option>
-                        <option className='p-2' value="blue">Blue</option>
-                      </select>
+                        {product.feature?.color}
+                      </p>
 
                     </div>
                   </div>
@@ -91,11 +99,12 @@ const ProductDetails = () => {
                   <div className="px-5 py-4">
                     <p className="text-xs font-medium tracking-widest text-gray-500 uppercase">Size</p>
                     <div className="relative mt-1">
-                      <select name="" id="" className="block w-full py-1 pl-0 pr-8 font-medium text-gray-900 bg-transparent border-none appearance-none">
-                        <option value="40">40</option>
-                        <option value="50">50</option>
-                        <option value="60">60</option>
-                      </select>
+                      <p
+                        id="color"
+                        className="block w-full font-medium text-gray-900 bg-transparent border-none hover:border-none focus:border-none appearance-none"
+                      >
+                        {product.feature?.size}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -108,6 +117,7 @@ const ProductDetails = () => {
                 <input className='my-2 p-2 max-w-36 bg-gray-100 border-2 rounded-md text-gray-800 text-xl' type='number'></input>
               </div>
               <div className="mt-5 sm:mt-5 sm:flex sm:items-center sm:space-x-5">
+                {/* Add to cart */}
                 <button
                   type="button"
                   className="flex
@@ -134,7 +144,7 @@ const ProductDetails = () => {
                 >
                   <Image width={20} height={20} src={Cart} alt='' /> Add to cart
                 </button>
-
+                {/* Add to wishlist */}
                 <button
                   type="button"
                   className="
@@ -170,7 +180,7 @@ const ProductDetails = () => {
               <h1 className='mt-8 text-2xl text-gray-700 font-bold'>Description</h1>
               <hr className='mt-3'></hr>
               <p className="mt-5 text-base font-normal leading-7 text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut amet a a blandit id non viverra massa semper. Varius bibendum suscipit sed mattis turpis enim in ornare. In orci condimentum id in. Sit sodales tempor, sed feugiat sit at fames a tellus.
+                {product.description}
               </p>
               <div className="">
                 <h2 className="mt-6 text-base font-bold text-gray-900">Highlights:</h2>

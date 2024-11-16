@@ -8,6 +8,7 @@ import WhatsApp from '/public/whatsapp-svgrepo-com.svg'
 import Instagram from '/public/instagram-svgrepo-com.svg'
 import Cart from '/public/cart-shopping-svgrepo-com.svg'
 import User from '/public/user-svgrepo-com.svg'
+import Link from 'next/link'
 
 const NavBar = () => {
     const [expand, setExpand] = useState(false);
@@ -23,9 +24,9 @@ const NavBar = () => {
                     <div className="flex items-center justify-around">
                         {/* LOGO */}
                         <div className="flex-shrink-0">
-                            <a href="#" title="" className="flex">
+                            <Link href="#" title="" className="flex">
                                 <Image width={200} height={200} src="https://cdn.rareblocks.xyz/collection/clarity/images/logo.svg" alt={''} />
-                            </a>
+                            </Link>
                         </div>
                         {/*  HAMBURGER*/}
                         <div className="flex lg:hidden">
@@ -43,23 +44,23 @@ const NavBar = () => {
                         </div>
                         {/* NAVIGATION LINKS LARGE */}
                         <nav className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-12">
-                            <a href="#" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Home </a>
+                            <Link href="/" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Home </Link>
 
-                            <a href="#" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Products </a>
+                            <Link href="/products" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Products </Link>
 
-                            <a href="#" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> About </a>
-                            <a href="#" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Contact Us </a>
+                            <Link href="/about" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> About </Link>
+                            <Link href="/contact" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Contact Us </Link>
                         </nav>
 
                         <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4">
-                            <a href="#" title="" className="text-base flex items-center font-semibold text-gray-600 transition-all duration-200  border-2 border-gray-600
+                            <Link href="/login" title="" className="text-base flex items-center font-semibold text-gray-600 transition-all duration-200  border-2 border-gray-600
                         rounded-3xl  focus:outline-none font-pj hover:opacity-50  px-4 py-2 gap-2">
                                 <Image width={20} height={20} src={User} className="opacity-90 text-white " alt='' />
                                 Login
-                            </a>
+                            </Link>
 
-                            <a
-                                href="#"
+                            <Link
+                                href="/cart"
                                 title=""
                                 className="
                                 bg-[#292e76]
@@ -85,7 +86,7 @@ const NavBar = () => {
                             >
                                 <Image width={20} height={20} src={Cart} className="opacity-90  text-white rounded-full  focus:outline-none focus:ring-2 " alt='' />
                                 <span className='mr-2'>Add to cart</span>
-                            </a>
+                            </Link>
                         </nav>
                     </div>
 
@@ -94,17 +95,17 @@ const NavBar = () => {
                         <nav className='lg:hidden '>
                             <div className="px-1 py-8">
                                 <div className="grid gap-y-7">
-                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Home </a>
+                                    <Link href="/" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Home </Link>
 
-                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Products </a>
+                                    <Link href="/products" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Products </Link>
 
-                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> About </a>
+                                    <Link href="/about" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> About </Link>
 
-                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Contact </a>
-                                    <a href="#" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Login </a>
+                                    <Link href="/contact" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Contact </Link>
+                                    <Link href="/login" title="" className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Login </Link>
 
-                                    <a
-                                        href="#"
+                                    <Link
+                                        href="/cart"
                                         title=""
                                         className="
                                 bg-[#292e76]
@@ -129,7 +130,7 @@ const NavBar = () => {
                                         role="button"
                                     >
                                         Add to cart
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </nav>

@@ -8,14 +8,14 @@ const Work = () => {
         <section className="py-12 bg-gray-50 sm:py-16 lg:py-20">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">How it <span className='text-[#51b7ae]'>works</span></h2>
+                    <h2 className=" font-bold text-gray-900 text-3xl sm:text-4xl xl:text-5xl font-pj">How it <span className='text-[#51b7ae]'>works</span></h2>
                     <p className="max-w-md mx-auto mt-5 text-base font-normal text-gray-600 font-pj">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
                 </div>
 
                 <div className="flex flex-col items-center max-w-md mx-auto mt-8 lg:mt-16 lg:flex-row lg:max-w-none">
                     <div className="relative flex-1 w-full  shadow-slate-200 shadow-2xl overflow-hidden bg-white border border-gray-200 rounded-2xl">
                         <div className="flex flex-col py-8 px-9 justify-center items-center">
-                        <Image className='py-5' alt='' src={Contact} height={150} width={150} />
+                            <Image className='py-5 h-36 w-36 md:h-44 md:w-44' alt='' src={Contact} height={150} width={150} />
                             <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-gray-900 rounded-xl font-pj">1</div>
                             <p className="mt-5 text-center text-xl font-medium text-gray-900 font-pj">Sign up for creating your first online store with ease.</p>
                         </div>
@@ -51,7 +51,7 @@ const Work = () => {
 
                         <div className="relative overflow-hidden bg-white border border-gray-200 rounded-2xl">
                             <div className="flex flex-col py-8 px-9 justify-center items-center">
-                                <Image className='py-5' alt='' src={Delivery} height={150} width={150} />
+                                <Image className='py-5  h-36 w-36 md:h-44 md:w-44' alt='' src={Delivery} height={150} width={150} />
 
                                 <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-gray-900 rounded-xl font-pj">2</div>
                                 <p className="mt-5 text-center text-xl font-medium text-gray-900 font-pj">Add your products to your store and customize.</p>
@@ -86,7 +86,7 @@ const Work = () => {
 
                     <div className="relative flex-1 w-full  shadow-slate-200 shadow-2xl overflow-hidden bg-white border border-gray-200 rounded-2xl">
                         <div className="flex flex-col py-8 px-9 justify-center items-center">
-                            <Image className='py-5' alt='' src={Recieved} height={150} width={150} />
+                            <Image className='py-5 h-36 w-36 md:h-44 md:w-44' alt='' src={Recieved} height={150} width={150} />
 
                             <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-gray-900 rounded-xl font-pj">3</div>
                             <p className="mt-5 text-xl text-center font-medium text-gray-900 font-pj">Sell and earn as much as you can. Grow fast.</p>
