@@ -84,8 +84,8 @@ const NavBar = () => {
                         focus:bg-[#292e76] focus:text-white "
                                 role="button"
                             >
-                                <Image width={20} height={20} src={Cart} className="opacity-90  text-white rounded-full  focus:outline-none focus:ring-2 " alt='' />
-                                <span className='mr-2'>Add to cart</span>
+                                <Image width={22} height={22} src={Cart} className="opacity-90  text-white rounded-full focus:outline-none focus:ring-2 " alt='' />
+
                             </Link>
                         </nav>
                     </div>
@@ -142,19 +142,20 @@ const NavBar = () => {
             <div className='hidden lg:block bg-[#1d6961] py-1 px-4 mx-auto max-w-9xl sm:px-6 lg:px-8  '>
                 <div className='flex justify-around '>
                     <div className="flex justify-center items-center gap-2  ">
-                        <Image width={17} height={17} src={WhatsApp} className="opacity-90  text-white py-2 px-
+                        <Image width={17} height={17} src={WhatsApp} className="opacity-80 hover:opacity-100 text-white py-2 px-
                         4 rounded-full focus:outline-none  " alt='' />
-                        <span className='text-sm opacity-90 cursor-pointer '>+977 9800000000</span>
+                        <Link href='https://wa.me/0909090909' target='_blank'><span className='text-sm opacity-80 cursor-pointer hover:opacity-100 '>+977 9800000000</span>
+                        </Link></div>
+                    <div className="flex justify-center items-center gap-2  ">
+                        <Image width={15} height={15} src={Location} className="opacity-80 hover:opacity-100 text-white py-2 px-
+                        4 rounded-full focus:outline-none  " alt='' />
+                        <Link href='https://maps.app.goo.gl/6xRYXXzdYrD4kfEPA' target='_blank'> <span className='text-sm hover:opacity-100 opacity-80 cursor-pointer '>Pharping, Dakshinkali</span>
+                        </Link>
                     </div>
                     <div className="flex justify-center items-center gap-2  ">
-                        <Image width={15} height={15} src={Location} className="opacity-90  text-white py-2 px-
+                        <Image width={15} height={15} src={Instagram} className=" opacity-80 hover:opacity-100 text-white py-2 px-
                         4 rounded-full focus:outline-none  " alt='' />
-                        <span className='text-sm opacity-90 cursor-pointer '>Pharping, Dakshinkali</span>
-                    </div>
-                    <div className="flex justify-center items-center gap-2  ">
-                        <Image width={15} height={15} src={Instagram} className=" opacity-90 text-white py-2 px-
-                        4 rounded-full focus:outline-none  " alt='' />
-                        <span className='text-sm opacity-90 cursor-pointer '>FurphingFurniture</span>
+                        <Link href='https://www.instagram.com/FurphingFurniture' target='_blank'> <span className='text-sm hover:opacity-100 opacity-80 cursor-pointer '>FurphingFurniture</span></Link>
                     </div>
                 </div>
             </div>

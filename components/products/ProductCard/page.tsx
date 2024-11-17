@@ -8,9 +8,9 @@ interface IproductProps {
 const ProductCard = ({ product }: IproductProps) => {
   return (
     <Link href={`/products/${product.id}`}>
-      <div className="relative group">
-        <div className="relative">
-          <div className="overflow-hidden aspect-w-3 aspect-h-4">
+      <div className="relative group ">
+        <div className="relative ">
+          <div className="overflow-hidden shadow-lg aspect-w-3 aspect-h-4">
             <img className="object-cover w-full h-full transition-all duration-300 origin-bottom group-hover:scale-110" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/item-cards/6/product-1.png" alt="" />
           </div>
           <div className="absolute inset-x-0 bottom-6">

@@ -5,12 +5,14 @@ import ProductDetails from "../components/products/ProductDetails/page";
 import ProductList from "../components/products/ProductList/[id]/page";
 import Testimonials from "../components/testimonials/page";
 import Work from "../components/work/page";
-import { getProducts } from "@/utils/api";
+import { getProducts, getTestimonials } from "@/utils/api";
 import Newsletter from "@/components/newsletter/page";
+import Products from "./products/page";
 
 export default async function Home() {
 
-  const products = await getProducts();
+  // const products = await getProducts();
+  const testimonials = await getTestimonials();
 
   return (
     <>
@@ -18,9 +20,9 @@ export default async function Home() {
       {/* <FilterBar /> */}
       <Work />
       <About />
-      {/* <ProductList products={products} /> */}
-      <Testimonials />
-      {/* <Newsletter /> */}
+      <Products />
+      <Testimonials reviews={testimonials} />
+      <Newsletter />
     </>
   );
 }
