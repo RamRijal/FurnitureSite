@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 const Hero = () => {
   return (
@@ -10,14 +11,14 @@ const Hero = () => {
               <p className="mt-5 text-lg font-medium text-gray-50 lg:mt-8">Buy our products from world’s top furniture store</p>
 
               <div className="mt-8 lg:mt-10">
-                <a
-                  href="#"
+                <Link
+                  href="/products"
                   title=""
                   className="inline-flex items-center justify-center px-8 py-3 text-base font-bold leading-7 text-gray-50 transition-all duration-200 bg-[#292e76] border border-transparent focus:outline-none font-pj hover:bg-[#383fa2] focus:bg-[#292e76]"
                   role="button"
                 >
                   Explore all products
-                </a>
+                </Link>
               </div>
 
               <div className="flex mt-8 justify-center items-center lg:mt-12">
@@ -66,7 +67,7 @@ const Hero = () => {
               </div>
             </div>
 
-          
+
           </div>
         </div>
       </div>
