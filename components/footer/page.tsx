@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Cart from '/public/cart-shopping-svgrepo-com.svg'
-
+import Logo from '@/public/Furphing.png'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -8,8 +9,13 @@ const Footer = () => {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-12 gap-y-12 gap-x-8 xl:gap-x-12">
           <div className="col-span-2 md:col-span-4 xl:pr-8">
-            <Image width={100} height={100} className="w-auto h-9" src="https://cdn.rareblocks.xyz/collection/clarity/images/logo.svg" alt="" />
-
+            <Link href="#" title="" className="flex gap-2">
+              <Image width={70} height={70} src={Logo} alt={''} />
+              <div className="flex-col">
+                <span className='text-[#141D1F] text-2xl font-bold'>Furphing</span>
+                <p className='text-[#141D1F] text-2xl font-bold -mt-2'>Furniture</p>
+              </div>
+            </Link>
             <p className="text-base leading-relaxed text-gray-600 mt-7">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
 
             <a href="#" title="" className="gap-2 inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-200 bg-[#292e76] rounded-md hover:bg-[#353c98] focus:bg-[#292e76] mt-7">
@@ -22,19 +28,19 @@ const Footer = () => {
             <p className="text-base font-semibold text-gray-900">Company</p>
             <ul className="mt-6 space-y-5">
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Home </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Home </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Products </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Products </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> About </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> About </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Contact Us </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Contact Us </a>
               </li>
             </ul>
           </div>
@@ -43,19 +49,19 @@ const Footer = () => {
             <p className="text-base font-semibold text-gray-900">Help</p>
             <ul className="mt-6 space-y-4">
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Customer Support </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Customer Support </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Delivery Details </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Delivery Details </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Terms & Conditions </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Terms & Conditions </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Privacy Policy </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Privacy Policy </a>
               </li>
             </ul>
           </div>
@@ -64,19 +70,19 @@ const Footer = () => {
             <p className="text-base font-semibold text-gray-900">Resources</p>
             <ul className="mt-6 space-y-5">
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Online Sale </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Online Sale </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> How to order </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> How to order </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Reviews </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Reviews </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Our partners </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Our partners </a>
               </li>
             </ul>
           </div>
@@ -86,19 +92,19 @@ const Footer = () => {
 
             <ul className="mt-6 space-y-5">
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Customer Support </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Customer Support </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Delivery Details </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Delivery Details </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Terms & Conditions </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Terms & Conditions </a>
               </li>
 
               <li>
-                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-orange-600 focus:text-orange-600"> Privacy Policy </a>
+                <a href="#" title="" className="flex text-sm text-gray-800 transition-all duration-200 hover:text-[#51B7AE] focus:text-[#51B7AE]"> Privacy Policy </a>
               </li>
             </ul>
           </div>
@@ -107,14 +113,14 @@ const Footer = () => {
         <hr className="mt-16 mb-10 border-gray-200" />
 
         <div className="sm:flex sm:items-center sm:justify-between">
-          <p className="text-sm text-gray-600">© Copyright 2021, All Rights Reserved by Postcraft</p>
+          <p className="text-sm text-gray-600">© Copyright 2021, All Rights Reserved by FurphingFurniture</p>
 
           <ul className="flex items-center mt-5 space-x-3 md:order-3 sm:mt-0">
             <li>
               <a
                 href="#"
                 title=""
-                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600"
+                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-[#51B7AE] hover:text-white focus:text-white hover:bg-[#51B7AE] hover:border-[#51B7AE] focus:border-[#51B7AE]"
               >
                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                   <path
@@ -128,7 +134,7 @@ const Footer = () => {
               <a
                 href="#"
                 title=""
-                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600"
+                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-[#51B7AE] hover:text-white focus:text-white hover:bg-[#51B7AE] hover:border-[#51B7AE] focus:border-[#51B7AE]"
               >
                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path>
@@ -140,7 +146,7 @@ const Footer = () => {
               <a
                 href="#"
                 title=""
-                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600"
+                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-[#51B7AE] hover:text-white focus:text-white hover:bg-[#51B7AE] hover:border-[#51B7AE] focus:border-[#51B7AE]"
               >
                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path>
@@ -156,7 +162,7 @@ const Footer = () => {
               <a
                 href="#"
                 title=""
-                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-orange-600 hover:text-white focus:text-white hover:bg-orange-600 hover:border-orange-600 focus:border-orange-600"
+                className="flex items-center justify-center text-gray-800 transition-all duration-200 bg-transparent border border-gray-300 rounded-full w-7 h-7 focus:bg-[#51B7AE] hover:text-white focus:text-white hover:bg-[#51B7AE] hover:border-[#51B7AE] focus:border-[#51B7AE]"
               >
                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                   <path

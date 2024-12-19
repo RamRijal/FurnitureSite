@@ -55,6 +55,61 @@ export const getProducts = async () => {
         size: "Large",
       },
     },
+    {
+      id: "5",
+      name: "Product A",
+      price: 50,
+      description: "A stylish and comfortable chair.",
+      category: "Furniture",
+      feature: {
+        color: "Red",
+        size: "Medium",
+      },
+    },
+    {
+      id: "6",
+      name: "Product B",
+      price: 75,
+      description: "A durable and spacious table.",
+      category: "Furniture",
+      feature: {
+        color: "Brown",
+        size: "Large",
+      },
+    },
+    {
+      id: "7",
+      name: "Product C",
+      price: 100,
+      description: "A sleek and modern lamp.",
+      category: "Decor",
+      feature: {
+        color: "White",
+        size: "Small",
+      },
+    },
+    {
+      id: "8",
+      name: "Product D",
+      price: 150,
+      description: "A versatile and portable bookshelf.",
+      category: "Furniture",
+      feature: {
+        color: "Black",
+        size: "Medium",
+      },
+    },
+    {
+      id: "9",
+      name: "Product E",
+      price: 200,
+      description: "A premium-quality recliner sofa.",
+      category: "Furniture",
+      feature: {
+        color: "Blue",
+        size: "Large",
+      },
+    },
   ];
   // const response = await fetch("https://www.fakeproducts.com");
   // const data = await response.json();
