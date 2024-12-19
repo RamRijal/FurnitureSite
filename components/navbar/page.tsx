@@ -9,6 +9,7 @@ import Instagram from '/public/instagram-svgrepo-com.svg'
 import Cart from '/public/cart-shopping-svgrepo-com.svg'
 import User from '/public/user-svgrepo-com.svg'
 import Link from 'next/link'
+import Logo from '@/public/Furphing.png'
 
 const NavBar = () => {
     const [expand, setExpand] = useState(false);
@@ -24,8 +25,12 @@ const NavBar = () => {
                     <div className="flex items-center justify-around">
                         {/* LOGO */}
                         <div className="flex-shrink-0">
-                            <Link href="#" title="" className="flex">
-                                <Image width={200} height={200} src="https://cdn.rareblocks.xyz/collection/clarity/images/logo.svg" alt={''} />
+                            <Link href="/" title="" className="flex gap-2">
+                                <Image width={70} height={70} src={Logo} alt={''} />
+                                <div className="flex-col">
+                                    <span className='text-[#141D1F] text-2xl font-bold'>Furphing</span>
+                                    <p className='text-[#141D1F] text-2xl font-bold -mt-2'>Furniture</p>
+                                </div>
                             </Link>
                         </div>
                         {/*  HAMBURGER*/}
@@ -60,7 +65,7 @@ const NavBar = () => {
                             </Link>
 
                             <Link
-                                href="/cart"
+                                href="/"
                                 title=""
                                 className="
                                 bg-[#292e76]

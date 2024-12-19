@@ -1,9 +1,11 @@
-import ProductList from '@/components/products/ProductList/[id]/page';
 import { getProducts } from '@/utils/api';
+import Link from 'next/link';
+import ProductList from '../ProductList/[id]/page';
 
-const Products = async () => {
-
+const ProductDisplay = async () => {
     const products = await getProducts();
+    const featuredProducts= products.slice(0,8);
+
     return (
         <section className="py-12 bg-gray-50 sm:py-16 lg:py-20">
             <div className="px-4 flex justify-center items-center mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -13,10 +15,13 @@ const Products = async () => {
                 </div>
             </div>
 
-            <ProductList products={products} />
-
+            <ProductList products={featuredProducts} />
+            <div className="flex items-center justify-center mt-12 ">
+                <Link href="/products" title="" className="relative items-center justify-center px-8 py-3 text-base font-normal text-white bg-[#292e76] border border-transparent rounded-full" role="button"> View all  </Link>
+            </div>
         </section>
+
     )
 }
 
-export default Products
+export default ProductDisplay
