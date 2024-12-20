@@ -3,7 +3,7 @@ import { getProductByID } from '@/utils/api';
 import Link from 'next/link';
 import React from 'react'
 
-type IproductsProps = {
+interface IproductsProps {
     params: {
         id: string;
     }
