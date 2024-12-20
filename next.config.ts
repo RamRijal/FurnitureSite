@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
       "plus.unsplash.com",
       "images.unsplash.com",
       "example.com",
+      "landingfoliocom.imgix.net",
+      
     ],
   },
 };

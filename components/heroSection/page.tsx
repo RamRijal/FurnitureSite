@@ -34,7 +34,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section>
+    <div>
       <div className="relative h-screen overflow-hidden">
         {/* Carousel background images */}
         {backgroundImages.map((image, index) => (
@@ -127,7 +127,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

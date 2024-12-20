@@ -1,11 +1,13 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Login = () => {
     return (
         <>
-            <section className="relative py-12 bg-gray-100 sm:py-16 lg:py-20">
+            <div className="relative py-12 bg-gray-100 sm:py-16 lg:py-20">
                 <div className="absolute inset-0 overflow-hidden">
-                    <img className="object-cover object-bottom w-full h-full transform rotate-180 opacity-10" src="https://cdn.rareblocks.xyz/collection/clarity/images/features/6/background-pattern.png" alt="" />
+                    <Image width={200} height={200} className="object-cover object-bottom w-full h-full transform rotate-180 opacity-10" src="https://cdn.rareblocks.xyz/collection/clarity/images/features/6/background-pattern.png" alt="" />
                 </div>
 
                 <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -20,7 +22,7 @@ const Login = () => {
                                     <h1 className="text-3xl font-bold text-gray-700 font-pj sm:text-4xl xl:text-5xl">Login</h1>
                                     <p className="mt-6 text-lg font-normal text-gray-600 font-pj">Sign in to Rareblocks today & start growing your business</p>
 
-                                    <a
+                                    <Link
                                         href="#"
                                         title=""
                                         className="
@@ -63,16 +65,16 @@ const Login = () => {
                                             <path d="M13.8645 5.30051C14.124 5.51426 14.5012 5.49883 14.7389 5.26113L16.5854 3.41465C16.855 3.14496 16.8358 2.70352 16.5477 2.45359C14.7854 0.924688 12.4925 0 10 0V3.91305C11.466 3.91305 12.8127 4.43398 13.8645 5.30051Z" fill="#D93F21" />
                                         </svg>
                                         Sign in with Google
-                                    </a>
+                                    </Link>
 
                                     <p className="mt-2 text-lg font-normal text-center text-gray-600">or </p>
-                                   
+
                                 </div>
 
                                 <form action="#" method="POST" className="mt-8">
                                     <div className="space-y-4">
                                         <div>
-                                            <label for="" className="text-base font-medium text-gray-900 font-pj"> Email </label>
+                                            <label htmlFor="" className="text-base font-medium text-gray-900 font-pj"> Email </label>
                                             <div className="mt-2.5">
                                                 <input type="email" name="" id="" placeholder="Email address" className="block w-full px-4 py-4 text-gray-900 placeholder-gray-600 bg-white border border-gray-400 rounded-xl focus:border-gray-900 focus:ring-gray-900 caret-gray-900" />
                                             </div>
@@ -80,7 +82,7 @@ const Login = () => {
 
                                         <div>
                                             <div className="flex items-center justify-between">
-                                                <label for="" className="text-base font-medium text-gray-900 font-pj"> Password </label>
+                                                <label htmlFor="" className="text-base font-medium text-gray-900 font-pj"> Password </label>
 
 
                                             </div>
@@ -96,7 +98,7 @@ const Login = () => {
                                             Sign in
                                         </button>
                                         <div className="text-center ">
-                                            <a href="#" title="" className="text-base font-medium text-gray-500 rounded font-pj hover:text-gray-900 hover:underline focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Forgot Password? </a>
+                                            <Link href="#" title="" className="text-base font-medium text-gray-500 rounded font-pj hover:text-gray-900 hover:underline focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"> Forgot Password? </Link>
                                         </div>
                                     </div>
                                 </form>
@@ -128,12 +130,16 @@ const Login = () => {
                                     <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 144 1)" />
                                 </svg>
 
-                                <p className="mt-5 text-base font-normal text-center text-gray-900 font-pj">Don’t have an account? <a href="#" title="" className="font-bold text-[#292e76] rounded hover:underline focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">Create Free Account</a></p>
+                                <p className="mt-5 text-base font-normal text-center text-gray-900 font-pj">Don’t have an account?
+                                    <Link href="#" title="" className="font-bold text-[#292e76] rounded hover:underline focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
+                                        Create Free Account
+                                    </Link>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </>)
 }
 
