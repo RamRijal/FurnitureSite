@@ -8,6 +8,7 @@ export type Product = {
   };
   description: string;
   category: string;
+  image:string;
 };
 
 interface IproductsProps {

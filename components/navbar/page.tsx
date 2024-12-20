@@ -20,7 +20,7 @@ const NavBar = () => {
 
     return (
         <>
-            <header className="py-6 bg-white" >
+            <header className="py-4 bg-white z-50" >
                 <div className="px-4 mx-auto max-w-9xl sm:px-6 lg:px-8">
                     <div className="flex items-center justify-around">
                         {/* LOGO */}
