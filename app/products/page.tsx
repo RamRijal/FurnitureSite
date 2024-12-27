@@ -1,10 +1,24 @@
+'use client'
 import ProductList from '@/components/products/ProductList/[id]/page';
+import Categories from '@/components/UI/Categories';
 import { TextFade } from '@/components/UI/TextFadeUp';
+import { Product } from '@/types/product';
 import { getProducts } from '@/utils/api';
+import { useEffect, useState } from 'react';
 
-const Products = async () => {
+const Products = () => {
+    const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
+    const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
-    const products = await getProducts();
+    useEffect(() => {
+        const OurProducts = async () => {
+            const products = await getProducts();
+            setFetchedProducts(products);
+            setFilteredProducts(products);
+        }
+        OurProducts();
+    }, [])
+
     return (
         <div className="py-12 bg-gray-50 sm:py-16 lg:py-20">
             <div className="px-4 flex justify-center items-center mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -16,7 +30,8 @@ const Products = async () => {
                 </div>
             </div>
 
-            <ProductList products={products} />
+            <Categories products={fetchedProducts} onFilter={setFilteredProducts} />
+            <ProductList products={filteredProducts} />
 
         </div>
     )

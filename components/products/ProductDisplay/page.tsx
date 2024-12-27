@@ -5,7 +5,7 @@ import { TextFade } from '@/components/UI/TextFadeUp';
 
 const ProductDisplay = async () => {
     const products = await getProducts();
-    const featuredProducts = products.slice(0, 8);
+    const featuredProducts = products.slice(0, 6);
 
     return (
         <div className="py-12 bg-gray-50 sm:py-16 lg:py-20">

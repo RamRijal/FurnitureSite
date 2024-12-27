@@ -1,8 +1,11 @@
-export const getProducts = async () => {
+import { Product } from "@/types/product";
+
+export const getProducts = async (): Promise<Product[]> => {
   return [
     {
       id: "1",
       name: "Bookshelf",
+      rating: 3,
       price: 1537,
       description: "A luxurious and spacious modern sofa.",
       category: "Living Room",
@@ -13,6 +16,7 @@ export const getProducts = async () => {
     {
       id: "2",
       name: "Modern Sofa",
+      rating: 3,
       price: 816,
       description: "A spacious and well-organized wardrobe.",
       category: "Outdoor",
@@ -23,6 +27,7 @@ export const getProducts = async () => {
     {
       id: "3",
       name: "Modern Sofa",
+      rating: 3,
       price: 1470,
       description: "A spacious and well-organized wardrobe.",
       category: "Living Room",
@@ -33,6 +38,7 @@ export const getProducts = async () => {
     {
       id: "4",
       name: "Wardrobe",
+      rating: 3,
       price: 1317,
       description: "A spacious and well-organized wardrobe.",
       category: "Living Room",
@@ -43,6 +49,7 @@ export const getProducts = async () => {
     {
       id: "5",
       name: "Modern Sofa",
+      rating: 3,
       price: 1004,
       description: "A set of two stylish bar stools with adjustable height.",
       category: "Study Room",
@@ -53,6 +60,7 @@ export const getProducts = async () => {
     {
       id: "6",
       name: "Patio Set",
+      rating: 3,
       price: 1095,
       description: "A set of two stylish bar stools with adjustable height.",
       category: "Bedroom",
@@ -63,6 +71,7 @@ export const getProducts = async () => {
     {
       id: "7",
       name: "Modern Sofa",
+      rating: 3,
       price: 401,
       description: "A weather-resistant patio set with seating for four.",
       category: "Kitchen",
@@ -73,6 +82,7 @@ export const getProducts = async () => {
     {
       id: "8",
       name: "Bar Stool Set",
+      rating: 3,
       price: 501,
       description: "A spacious and well-organized wardrobe.",
       category: "Study Room",
@@ -83,6 +93,7 @@ export const getProducts = async () => {
     {
       id: "9",
       name: "Modern Sofa",
+      rating: 3,
       price: 1191,
       description: "A luxurious and spacious modern sofa.",
       category: "Study Room",
@@ -93,6 +104,7 @@ export const getProducts = async () => {
     {
       id: "10",
       name: "Modern Sofa",
+      rating: 3,
       price: 277,
       description: "A contemporary TV stand with multiple storage sections.",
       category: "Dining Room",
@@ -103,6 +115,7 @@ export const getProducts = async () => {
     {
       id: "11",
       name: "Recliner Chair",
+      rating: 3,
       price: 1283,
       description: "A comfortable recliner chair with plush cushions.",
       category: "Bedroom",
@@ -113,6 +126,7 @@ export const getProducts = async () => {
     {
       id: "12",
       name: "Recliner Chair",
+      rating: 3,
       price: 630,
       description: "A tall and spacious wooden bookshelf.",
       category: "Living Room",
@@ -123,6 +137,7 @@ export const getProducts = async () => {
     {
       id: "13",
       name: "Modern Sofa",
+      rating: 3,
       price: 1385,
       description: "A classic dining table with six matching chairs.",
       category: "Outdoor",
@@ -133,6 +148,7 @@ export const getProducts = async () => {
     {
       id: "14",
       name: "Modern Sofa",
+      rating: 3,
       price: 528,
       description: "A weather-resistant patio set with seating for four.",
       category: "Kitchen",
@@ -143,6 +159,7 @@ export const getProducts = async () => {
     {
       id: "15",
       name: "Recliner Chair",
+      rating: 3,
       price: 1247,
       description: "A tall and spacious wooden bookshelf.",
       category: "Living Room",
@@ -153,6 +170,7 @@ export const getProducts = async () => {
     {
       id: "16",
       name: "Dining Table Set",
+      rating: 3,
       price: 1192,
       description: "A spacious and well-organized wardrobe.",
       category: "Bedroom",
@@ -163,6 +181,7 @@ export const getProducts = async () => {
     {
       id: "17",
       name: "Bed Frame",
+      rating: 3,
       price: 1231,
       description: "A weather-resistant patio set with seating for four.",
       category: "Living Room",
@@ -173,6 +192,7 @@ export const getProducts = async () => {
     {
       id: "18",
       name: "Wardrobe",
+      rating: 3,
       price: 1029,
       description: "A comfortable recliner chair with plush cushions.",
       category: "Living Room",
@@ -183,6 +203,7 @@ export const getProducts = async () => {
     {
       id: "19",
       name: "Recliner Chair",
+      rating: 3,
       price: 1466,
       description: "A classic dining table with six matching chairs.",
       category: "Dining Room",
@@ -193,6 +214,7 @@ export const getProducts = async () => {
     {
       id: "20",
       name: "Bookshelf",
+      rating: 3,
       price: 1589,
       description: "A contemporary TV stand with multiple storage sections.",
       category: "Living Room",
@@ -203,6 +225,7 @@ export const getProducts = async () => {
     {
       id: "21",
       name: "Bookshelf",
+      rating: 3,
       price: 1415,
       description: "A tall and spacious wooden bookshelf.",
       category: "Outdoor",
@@ -213,6 +236,7 @@ export const getProducts = async () => {
     {
       id: "22",
       name: "Wardrobe",
+      rating: 3,
       price: 436,
       description: "A sturdy and ergonomic office desk.",
       category: "Dining Room",
@@ -223,6 +247,7 @@ export const getProducts = async () => {
     {
       id: "23",
       name: "Dining Table Set",
+      rating: 3,
       price: 167,
       description: "A weather-resistant patio set with seating for four.",
       category: "Outdoor",
@@ -233,6 +258,7 @@ export const getProducts = async () => {
     {
       id: "24",
       name: "Office Desk",
+      rating: 3,
       price: 819,
       description: "A weather-resistant patio set with seating for four.",
       category: "Study Room",
@@ -243,6 +269,7 @@ export const getProducts = async () => {
     {
       id: "25",
       name: "Recliner Chair",
+      rating: 3,
       price: 393,
       description: "A weather-resistant patio set with seating for four.",
       category: "Living Room",
@@ -253,6 +280,7 @@ export const getProducts = async () => {
     {
       id: "26",
       name: "Bookshelf",
+      rating: 3,
       price: 1488,
       description: "A tall and spacious wooden bookshelf.",
       category: "Study Room",
@@ -263,6 +291,7 @@ export const getProducts = async () => {
     {
       id: "27",
       name: "Bar Stool Set",
+      rating: 3,
       price: 407,
       description: "A contemporary TV stand with multiple storage sections.",
       category: "Office",
@@ -273,6 +302,7 @@ export const getProducts = async () => {
     {
       id: "28",
       name: "Recliner Chair",
+      rating: 3,
       price: 685,
       description: "A contemporary TV stand with multiple storage sections.",
       category: "Living Room",
@@ -283,6 +313,7 @@ export const getProducts = async () => {
     {
       id: "29",
       name: "Wardrobe",
+      rating: 3,
       price: 259,
       description: "A set of two stylish bar stools with adjustable height.",
       category: "Office",
@@ -293,6 +324,7 @@ export const getProducts = async () => {
     {
       id: "30",
       name: "Dining Table Set",
+      rating: 3,
       price: 1513,
       description: "A weather-resistant patio set with seating for four.",
       category: "Kitchen",
@@ -303,6 +335,7 @@ export const getProducts = async () => {
     {
       id: "31",
       name: "Office Desk",
+      rating: 3,
       price: 538,
       description: "A spacious and well-organized wardrobe.",
       category: "Office",
@@ -313,6 +346,7 @@ export const getProducts = async () => {
     {
       id: "32",
       name: "Recliner Chair",
+      rating: 3,
       price: 1008,
       description: "A set of two stylish bar stools with adjustable height.",
       category: "Bedroom",
@@ -323,6 +357,7 @@ export const getProducts = async () => {
     {
       id: "33",
       name: "Recliner Chair",
+      rating: 3,
       price: 660,
       description: "A sturdy and ergonomic office desk.",
       category: "Outdoor",
@@ -333,6 +368,7 @@ export const getProducts = async () => {
     {
       id: "34",
       name: "Bookshelf",
+      rating: 3,
       price: 638,
       description: "A sturdy and ergonomic office desk.",
       category: "Dining Room",
@@ -343,6 +379,7 @@ export const getProducts = async () => {
     {
       id: "35",
       name: "Wardrobe",
+      rating: 3,
       price: 241,
       description: "A spacious and well-organized wardrobe.",
       category: "Kitchen",
@@ -353,6 +390,7 @@ export const getProducts = async () => {
     {
       id: "36",
       name: "Wardrobe",
+      rating: 3,
       price: 1028,
       description: "A tall and spacious wooden bookshelf.",
       category: "Kitchen",
@@ -363,6 +401,7 @@ export const getProducts = async () => {
     {
       id: "37",
       name: "Patio Set",
+      rating: 3,
       price: 103,
       description: "A classic dining table with six matching chairs.",
       category: "Office",
@@ -373,6 +412,7 @@ export const getProducts = async () => {
     {
       id: "38",
       name: "Office Desk",
+      rating: 3,
       price: 1222,
       description: "A classic dining table with six matching chairs.",
       category: "Bedroom",
@@ -383,6 +423,7 @@ export const getProducts = async () => {
     {
       id: "39",
       name: "Recliner Chair",
+      rating: 3,
       price: 858,
       description: "A contemporary TV stand with multiple storage sections.",
       category: "Bedroom",
@@ -393,6 +434,7 @@ export const getProducts = async () => {
     {
       id: "40",
       name: "Modern Sofa",
+      rating: 3,
       price: 370,
       description: "A weather-resistant patio set with seating for four.",
       category: "Study Room",
@@ -407,7 +449,9 @@ export const getProducts = async () => {
   // return data.products;
 };
 
-export const getProductByID = async (id: string) => {
+export const getProductByID = async (
+  id: string
+): Promise<Product | undefined> => {
   const products = await getProducts();
   const product = products.find(
     (product: { id: string }) => product.id === id || null
@@ -530,4 +574,11 @@ export const getTestimonials = async () => {
 //   "https://images.pexels.com/photos/919602/pexels-photo-919602.jpeg?auto=compress&cs=tinysrgb&w=600",
 // ];
 
-
+export const category = [
+  "All",
+  "Modern Sofa",
+  "Outdoor",
+  "Bedroom",
+  "Bathroom",
+  "Living Room",
+];

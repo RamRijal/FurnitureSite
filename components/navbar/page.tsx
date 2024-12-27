@@ -149,18 +149,18 @@ const NavBar = () => {
                     <div className="flex justify-center items-center gap-2  ">
                         <Image width={17} height={17} src={WhatsApp} className="opacity-80 hover:opacity-100 text-white py-2 px-
                         4 rounded-full focus:outline-none  " alt='' />
-                        <Link href='https://wa.me/0909090909' target='_blank'><span className='text-sm opacity-80 cursor-pointer hover:opacity-100 '>+977 9800000000</span>
+                        <Link href='https://wa.me/0909090909' target='_blank'><span className='text-sm opacity-80 cursor-pointer hover:opacity-100 text-gray-300  '>+977 9800000000</span>
                         </Link></div>
                     <div className="flex justify-center items-center gap-2  ">
                         <Image width={15} height={15} src={Location} className="opacity-80 hover:opacity-100 text-white py-2 px-
                         4 rounded-full focus:outline-none  " alt='' />
-                        <Link href='https://maps.app.goo.gl/6xRYXXzdYrD4kfEPA' target='_blank'> <span className='text-sm hover:opacity-100 opacity-80 cursor-pointer '>Pharping, Dakshinkali</span>
+                        <Link href='https://maps.app.goo.gl/6xRYXXzdYrD4kfEPA' target='_blank'> <span className='text-sm hover:opacity-100 opacity-80 text-gray-300 cursor-pointer '>Pharping, Dakshinkali</span>
                         </Link>
                     </div>
                     <div className="flex justify-center items-center gap-2  ">
-                        <Image width={15} height={15} src={Instagram} className=" opacity-80 hover:opacity-100 text-white py-2 px-
+                        <Image width={16} height={16} src={Instagram} className=" opacity-80 hover:opacity-100 text-white py-2 px-
                         4 rounded-full focus:outline-none  " alt='' />
-                        <Link href='https://www.instagram.com/FurphingFurniture' target='_blank'> <span className='text-sm hover:opacity-100 opacity-80 cursor-pointer '>FurphingFurniture</span></Link>
+                        <Link href='https://www.instagram.com/FurphingFurniture' target='_blank'> <span className='text-sm hover:opacity-100 opacity-80 text-gray-300 cursor-pointer '>FurphingFurniture</span></Link>
                     </div>
                 </div>
             </div>

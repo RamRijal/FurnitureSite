@@ -6,7 +6,7 @@ import Recieved from '/public/christmas-present-gift-birthday-christmas-done-con
 import { TextFade } from '../UI/TextFadeUp'
 const Work = () => {
     return (
-        <section className="py-12 h-screen bg-gray-50 sm:py-16 lg:py-20">
+        <section className="py-12 h-full bg-gray-50 sm:py-16 lg:py-20">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="text-center">
                     <TextFade direction='up'>

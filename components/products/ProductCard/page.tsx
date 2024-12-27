@@ -34,7 +34,7 @@ const ProductCard = ({ product }: IproductProps) => {
         </Link >
       </div>
 
-      <div className="flex flex-col my-4 gap-1">
+      <div className="flex flex-col my-4 px-2 gap-1">
         {/* NAME AND PRICE */}
         <div className="flex justify-between items-center ">
           <div className="flex flex-col ">
@@ -54,18 +54,18 @@ const ProductCard = ({ product }: IproductProps) => {
         </div>
         {/* CATEGORY AND RATINGS */}
 
-        <div className="flex mt-2 justify-between">
+        <div className="flex mt-2 justify-between ">
           <div className="flex flex-col -mt-2">
             <div className="flex -mt-2 mb-1">
               <p className="bg-black bg-opacity-15 flex rounded-full px-3  py-1.5 mt-1  text-xs font-medium text-white">
                 {product.category}
               </p>
             </div>
-            <div className="flex justify-between items-center my-1 ">
-              <p className='text-sm text-gray-900 '>{product.description.slice(0,50)}...</p>
+            <div className="flex justify-between my-1 ">
+              <p className=' text-left text-sm text-gray-900 '>{product.description.slice(0,50)}...</p>
             </div>
             <div className="flex w-20 justify-between items-center my-1 ">
-              {RatingsDisplay(4)}
+              {RatingsDisplay(product.rating)}
             </div>
           </div>
           <div className="flex ">

@@ -95,7 +95,7 @@ const Hero = () => {
                   </Link>
                 </div>
 
-                <div className="inline-grid grid-cols-3 mt-8 gap-x-8">
+                <div className="md:inline-grid grid-cols-3 mt-8 gap-x-8">
                   <div>
                     <p className="text-6xl font-bold text-gray-300">
                       <Counter className='text-6xl' from={0} to={50} />
