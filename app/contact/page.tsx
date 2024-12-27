@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <section className="py-12 bg-gray-50 sm:py-16 lg:py-20 xl:py-24">
+        <div className="py-12 bg-gray-50 sm:py-16 lg:py-20 xl:py-24">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 lg:gap-x-16 xl:gap-x-36">
                     <div className="flex flex-col self-stretch justify-between">
@@ -45,33 +45,32 @@ const Contact = () => {
                         <div className="p-6 sm:p-10">
                             <form action="#" method="POST" className="space-y-6">
                                 <div>
-                                    <label for="fullName" className="text-base font-medium text-gray-900"> Your name </label>
+                                    <label htmlFor="fullName" className="text-base font-medium text-gray-900"> Your name </label>
                                     <div className="mt-2">
                                         <input type="text" name="fullName" id="fullName" placeholder="Enter your full name" className="block w-full px-4 py-4 text-base text-gray-900 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-[#292e76] focus:ring-1 focus:ring-[#292e76]" />
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="phone" className="text-base font-medium text-gray-900"> Phone Number</label>
+                                    <label htmlFor="phone" className="text-base font-medium text-gray-900"> Phone Number</label>
                                     <div className="mt-2">
                                         <input type="text" name="phone" id="phone" placeholder="Enter your phone number" className="block w-full px-4 py-4 text-base text-gray-900 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-[#292e76] focus:ring-1 focus:ring-[#292e76]" />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label for="email" className="text-base font-medium text-gray-900"> Email address </label>
+                                    <label htmlFor="email" className="text-base font-medium text-gray-900"> Email address </label>
                                     <div className="mt-2">
                                         <input type="email" name="email" id="email" placeholder="Enter your email" className="block w-full px-4 py-4 text-base text-gray-900 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-[#292e76] focus:ring-1 focus:ring-[#292e76]" />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label for="message" className="text-base font-medium text-gray-900"> Write your message </label>
+                                    <label htmlFor="message" className="text-base font-medium text-gray-900"> Write your message </label>
                                     <div className="mt-2">
                                         <textarea
                                             name="email"
                                             id="email"
                                             placeholder="Write us your question here..."
-                                            rows="4"
                                             className="block w-full px-4 py-4 text-base text-gray-900 bg-white border border-gray-200 resize-y rounded-xl focus:outline-none focus:border-[#292e76] focus:ring-1 focus:ring-[#292e76]"
                                         ></textarea>
                                     </div>
@@ -88,7 +87,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 

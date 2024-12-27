@@ -8,8 +8,20 @@ export type Product = {
   };
   description: string;
   category: string;
+  image: string;
+  rating: number;
 };
 
-interface IproductsProps {
+export interface IproductsProps {
   products: Product[];
+}
+interface IproductProps {
+  product: Product;
+}
+
+
+export interface ProductPageProps {
+  params: {
+    id: string;
+  };
 }

@@ -1,19 +1,21 @@
+import Image from 'next/image';
 import React from 'react'
+import { TextFade } from '../UI/TextFadeUp';
 
 const Newsletter = () => {
     return (
-        <section className="relative py-12 overflow-hidden bg-gray-100 sm:py-16 lg:py-18 xl:py-18">
-
-
+        <div className="relative py-12 overflow-hidden bg-gray-100 sm:py-16 lg:py-18 xl:py-18">
             <div className="absolute inset-0">
-                <img className="object-cover w-full h-full opacity-50" src="https://landingfoliocom.imgix.net/store/collection/dusk/images/noise.png" alt="Background noise" />
+                <Image height={100} width={100} className="object-cover w-full h-full opacity-50" src="https://landingfoliocom.imgix.net/store/collection/dusk/images/noise.png" alt="Background noise" />
             </div>
 
             <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                 <div className="grid items-center max-w-md grid-cols-1 mx-auto lg:max-w-none lg:gap-x-24 lg:grid-cols-2 xl:gap-x-40 gap-y-12">
                     <div className="text-center lg:text-left">
-                        <h2 className="text-3xl font-medium text-gray-600 sm:text-4xl lg:text-5xl xl:text-5xl">Join our <span className='text-[#51b7ae]'>newsletter</span> & stay updated.</h2>
-                        <p className="mt-6 text-lg font-normal text-gray-500">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint</p>
+                        <TextFade direction='up'>
+                            <h2 className="text-3xl font-medium text-gray-600 sm:text-4xl lg:text-5xl xl:text-5xl">Join our <span className='text-[#51b7ae]'>newsletter</span> & stay updated.</h2>
+                            <p className="mt-6 text-lg font-normal text-gray-500">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint</p>
+                        </TextFade>
                     </div>
 
                     <div className="overflow-hidden border-2 shadow-lg bg-white rounded-xl">
@@ -31,12 +33,12 @@ const Newsletter = () => {
                                 </div>
                             </form>
 
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

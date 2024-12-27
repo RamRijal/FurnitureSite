@@ -1,33 +1,88 @@
+'use client'
+import RatingsDisplay from '@/components/testimonials/TestimonialCard/Ratings/page';
+import AddtoCartButton from '@/components/UI/AddtoCartButton';
 import { Product } from '@/types/product';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import { useState } from 'react';
+import { BiHeart } from 'react-icons/bi';
+import { HiHeart } from 'react-icons/hi';
+
 interface IproductProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: IproductProps) => {
+  const [isfavourite, setIsFavorite] = useState(false)
+
+  const HandleFavourite = () => {
+    setIsFavorite(!isfavourite);
+  }
   return (
-    <Link href={`/products/${product.id}`}>
-      <div className="relative group ">
-        <div className="relative ">
-          <div className="overflow-hidden shadow-lg aspect-w-3 aspect-h-4">
-            <Image className="object-cover w-full h-full transition-all duration-300 origin-bottom group-hover:scale-110" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/item-cards/6/product-1.png" alt="" width={200} height={100}/>
+    <div className="relative group">
+      <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-lg">
+        {/* IMAGE ONLY */}
+        <Link className='cursor-pointer' href={`/products/${product.id}`}>
+          <Image
+            loading="lazy"
+            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+            src={product.image}
+            alt={product.name}
+            width={300}
+            height={400}
+          />
+        </Link >
+      </div>
+
+      <div className="flex flex-col my-4 px-2 gap-1">
+        {/* NAME AND PRICE */}
+        <div className="flex justify-between items-center ">
+          <div className="flex flex-col ">
+            <Link
+              className="text-xl font-bold text-gray-900"
+              href={`/products/${product.id}`}
+              title={product.name}
+            >
+              <p className="text-xl font-bold text-gray-900">
+                {product.name}
+              </p>
+            </Link>
           </div>
-          <div className="absolute inset-x-0 bottom-6">
-            <p className="bg-white rounded-full border border-gray-200 px-4 text-sm font-bold text-gray-900 py-1.5 inline-flex items-center justify-center">$19.00-$29.00</p>
+          <p className=" text-3xl font-bold text-green-600">
+            ${product.price}
+          </p>
+        </div>
+        {/* CATEGORY AND RATINGS */}
+
+        <div className="flex mt-2 justify-between ">
+          <div className="flex flex-col -mt-2">
+            <div className="flex -mt-2 mb-1">
+              <p className="bg-black bg-opacity-15 flex rounded-full px-3  py-1.5 mt-1  text-xs font-medium text-white">
+                {product.category}
+              </p>
+            </div>
+            <div className="flex justify-between my-1 ">
+              <p className=' text-left text-sm text-gray-900 '>{product.description.slice(0,50)}...</p>
+            </div>
+            <div className="flex w-20 justify-between items-center my-1 ">
+              {RatingsDisplay(product.rating)}
+            </div>
+          </div>
+          <div className="flex ">
+            {isfavourite ?
+              <button className='text-red-500 bg-red-50 px-2 rounded-md' onClick={HandleFavourite}><HiHeart size={25} /></button> :
+              <button className='text-red-500 bg-red-50 px-2 rounded-md' onClick={HandleFavourite}><BiHeart size={25} /></button>
+            }
           </div>
         </div>
-        <h3 className="mt-4 text-base font-bold text-gray-900">
-          <Link href={`/products/${product.id}`} title="">
-            {product.name}
-            <span className="absolute inset-0" aria-hidden="true"></span>
-          </Link>
-        </h3>
-        <p className="mt-1.5 text-base font-medium text-gray-500">{product.category}</p>
+        <Link href='/'>
+          <div className="flex justify-center items-center my-1">
+            <AddtoCartButton />
+          </div>
+        </Link>
       </div>
-    </Link>
-  )
-}
+    </div >
+  );
+};
 
-export default ProductCard
+export default ProductCard;

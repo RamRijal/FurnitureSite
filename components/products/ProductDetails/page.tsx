@@ -1,15 +1,15 @@
-import Image from 'next/image'
-import React from 'react'
-import Cart from '/public/cart-shopping-svgrepo-com.svg'
-import { Product } from '@/types/product'
+'use client'
+import NoOfItems from '@/components/UI/NoOfItems';
+import { IproductProps } from '@/types/product';
+import Image from 'next/image';
 import Link from 'next/link';
+import SimilarProducts from '../SimilarProducts/page';
+import Cart from '/public/cart-shopping-svgrepo-com.svg';
 // import Dropdown from '/public/down-chevron-svgrepo-com.svg'
 
-interface IproductsProps {
-  product: Product;
-}
 
-const ProductDetails = ({ product }: IproductsProps) => {
+const ProductDetails = ({ product }: IproductProps) => {
+
   return (
     <>
       <section className=" bg-gray-900 max-w-full">
@@ -17,7 +17,7 @@ const ProductDetails = ({ product }: IproductsProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-10 xl:gap-x-20">
             {/* ImageDisplay */}
             <div className="relative lg:col-span-5">
-              <img className="lg:ml-8 object-cover p-4 lg:w-full lg:h-full sm:rounded-md" src="https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+              <Image loading='lazy' height={300} width={300} className="lg:ml-8 object-cover p-4 lg:w-full lg:h-full sm:rounded-md" src={product.image} alt="" />
 
               <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
               <div className="absolute lg:ml-8 p-4 -translate-x-1/2 left-1/2 bottom-6">
@@ -33,7 +33,7 @@ const ProductDetails = ({ product }: IproductsProps) => {
 
             <div className="px-4 pb-8 lg:col-span-7 xl:pr-16">
               {/* Breadcrumbs */}
-              <nav className="flex">
+              <nav className="hidden md:flex">
                 <ol role="list" className="flex items-center space-x-1">
                   <li>
                     <div className="-m-1">
@@ -114,7 +114,7 @@ const ProductDetails = ({ product }: IproductsProps) => {
 
               <div className=''>
                 <h1 className=' font-semibold text-xl text-gray-900'>No of items:</h1>
-                <input className='my-2 p-2 max-w-36 bg-gray-100 border-2 rounded-md text-gray-800 text-xl' type='number'></input>
+                <NoOfItems />
               </div>
               <div className="mt-5 sm:mt-5 sm:flex sm:items-center sm:space-x-5">
                 {/* Add to cart */}
@@ -228,9 +228,11 @@ const ProductDetails = ({ product }: IproductsProps) => {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
+          <hr className='mt-8'></hr>
+
+          <SimilarProducts product={product} />
 
 
         </div>
