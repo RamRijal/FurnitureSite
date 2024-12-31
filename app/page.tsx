@@ -27,7 +27,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <div className="hidden lg:block absolute top-[620px] left-[330px]">
+      <div className="hidden lg:block absolute top-[620px] left-[265px]">
         <SearchInput />
       </div>
       <Work />

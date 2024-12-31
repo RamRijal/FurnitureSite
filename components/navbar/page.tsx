@@ -1,15 +1,14 @@
 'use client'
-import React, { useState } from 'react'
 import Image from 'next/image'
+import { useState } from 'react'
 import Location from '/public/location-svgrepo-com.svg'
 // import Call from '/public/call-receive-svgrepo-com.svg'
 import WhatsApp from '/public/whatsapp-svgrepo-com.svg'
 // import Facebook from '/public/facebook-svgrepo-com.svg'
-import Instagram from '/public/instagram-svgrepo-com.svg'
-import Cart from '/public/cart-shopping-svgrepo-com.svg'
-import User from '/public/user-svgrepo-com.svg'
-import Link from 'next/link'
 import Logo from '@/public/Furphing.png'
+import Link from 'next/link'
+import Cart from '/public/cart-shopping-svgrepo-com.svg'
+import Instagram from '/public/instagram-svgrepo-com.svg'
 
 const NavBar = () => {
     const [expand, setExpand] = useState(false);
@@ -28,11 +27,12 @@ const NavBar = () => {
                             <Link href="/" title="" className="flex gap-2">
                                 <Image width={70} height={70} src={Logo} alt={''} />
                                 <div className="flex-col">
-                                    <span className='text-[#141D1F] text-2xl font-bold'>Furphing</span>
-                                    <p className='text-[#141D1F] text-2xl font-bold -mt-2'>Furniture</p>
+                                    <span className='text-[#141D1F] text-xl font-bold'>Furphing</span>
+                                    <p className='text-[#141D1F] text-xl font-bold -mt-2'>Furniture</p>
                                 </div>
                             </Link>
                         </div>
+                        
                         {/*  HAMBURGER*/}
                         <div className="flex lg:hidden">
                             <button type="button" className="text-gray-900" onClick={toggleExpand} aria-expanded={expand}>
@@ -55,12 +55,14 @@ const NavBar = () => {
 
                             <Link href="/about" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> About </Link>
                             <Link href="/contact" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Contact Us </Link>
+                            
                         </nav>
 
                         <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4">
-                            <Link href="/login" title="" className="text-base flex items-center font-semibold text-gray-600 transition-all duration-200  border-2 border-gray-600
+                            
+                            <Link href="/login" title="" className="text-base flex items-center font-semibold text-gray-500 transition-all duration-200  border-2 border-gray-400
                         rounded-3xl  focus:outline-none font-pj hover:opacity-50  px-4 py-2 gap-2">
-                                <Image width={20} height={20} src={User} className="opacity-90 text-white " alt='' />
+
                                 Login
                             </Link>
 
@@ -68,12 +70,14 @@ const NavBar = () => {
                                 href="/"
                                 title=""
                                 className="
+                                h-11
+                                w-20
                                 bg-[#292e76]
                                 gap-2
                                 inline-flex
                                 items-center
                                 justify-center
-                                px-4
+                                px-5
                                 py-2
                                 text-base
                         font-semibold
@@ -89,7 +93,7 @@ const NavBar = () => {
                         focus:bg-[#292e76] focus:text-white "
                                 role="button"
                             >
-                                <Image width={22} height={22} src={Cart} className="opacity-90  text-white rounded-full focus:outline-none focus:ring-2 " alt='' />
+                                <Image width={25} height={25} src={Cart} className="opacity-100  text-white rounded-full focus:outline-none focus:ring-2 " alt='' />
 
                             </Link>
                         </nav>

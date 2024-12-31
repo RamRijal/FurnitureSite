@@ -7,8 +7,8 @@ import { getProducts } from '@/utils/api';
 import { useEffect, useState } from 'react';
 
 const Products = () => {
-    const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+    const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
 
     useEffect(() => {
         const OurProducts = async () => {
