@@ -1,6 +1,6 @@
 'use client'
 import RatingsDisplay from '@/components/testimonials/TestimonialCard/Ratings/page';
-import AddtoCartButton from '@/components/UI/AddtoCartButton';
+import AddtoCartButton from '@/UI/AddtoCartButton';
 import { Product } from '@/types/product';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -62,7 +62,7 @@ const ProductCard = ({ product }: IproductProps) => {
               </p>
             </div>
             <div className="flex justify-between my-1 ">
-              <p className=' text-left text-sm text-gray-900 '>{product.description.slice(0,50)}...</p>
+              <p className=' text-left text-sm text-gray-900 '>{product.description.slice(0, 50)}...</p>
             </div>
             <div className="flex w-20 justify-between items-center my-1 ">
               {RatingsDisplay(product.rating)}

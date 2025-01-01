@@ -1,16 +1,16 @@
 import React from 'react'
-import { TextFade } from './UI/TextFadeUp'
+import { TextFade } from '../UI/TextFadeUp'
 import Image from 'next/image'
 import Link from 'next/link'
 
 const AboutUs = () => {
     return (
-        <div className="pt-2 pb-12 bg-gray-100 sm:py-16 lg:py-20 xl:py-24">
+        <div className="pt-2 -z-10 pb-12 bg-gray-100 sm:py-16 lg:py-20 xl:py-24">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-                <div className="grid items-center max-w-md grid-cols-1 mx-auto lg:grid-cols-2 lg:gap-x-20 gap-y-12 lg:max-w-none lg:mx-0">
+                <div className="grid md:text-center lg:text-left items-center max-w-3xl grid-cols-1 mx-auto lg:grid-cols-2 lg:gap-x-20 gap-y-12 lg:max-w-none lg:mx-0">
                     <div>
                         <div className="hidden lg:block relative overflow-hidden rounded-xl">
-                            <Image height={100} width={200} className="object-cover w-full h-full" src="https://images.unsplash.com/photo-1567016507665-356928ac6679?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
+                            <Image height={100} width={200} className="object-cover w-96 h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1567016507665-356928ac6679?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZ1cm5pdHVyZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
                             <div className="absolute px-5 py-4 shadow-lg right-6 bottom-6 rounded-xl bg-base-900 bg-opacity-80 backdrop-blur-lg filter">
                                 <div className="hidden md:flex items-center">
                                     <svg className="w-8 h-8 text-white shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -45,7 +45,7 @@ const AboutUs = () => {
                         </TextFade>
                         <div className="relative inline-flex items-center justify-center mt-6 sm:mt-8 group">
                             <div className="absolute transition-all duration-200 rounded-full -inset-px bg-gradient-to-r from-[#5178b7] to-[#1d3569] group-hover:shadow-lg group-hover:shadow-[#5e63aa]"></div>
-                            <Link href="/about" title="" className="relative inline-flex items-center justify-center px-8 py-3 text-base font-normal text-white bg-[#292e76] border border-transparent rounded-full" role="button"> Read more  </Link>
+                            <Link href="/about" title="" className="relative inline-flex items-center text-center justify-center px-8 py-3 text-base font-normal text-white bg-[#292e76] border border-transparent rounded-full" role="button"> Read more  </Link>
                         </div>
                     </div>
                 </div>

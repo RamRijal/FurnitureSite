@@ -1,7 +1,7 @@
 'use client'
 import ProductList from '@/components/products/ProductList/[id]/page';
-import Categories from '@/components/UI/Categories';
-import { TextFade } from '@/components/UI/TextFadeUp';
+import Categories from '@/UI/Categories';
+import { TextFade } from '@/UI/TextFadeUp';
 import { Product } from '@/types/product';
 import { getProducts } from '@/utils/api';
 import { useEffect, useState } from 'react';

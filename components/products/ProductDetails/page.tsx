@@ -1,5 +1,5 @@
 'use client'
-import NoOfItems from '@/components/UI/NoOfItems';
+import NoOfItems from '@/UI/NoOfItems';
 import { IproductProps } from '@/types/product';
 import Image from 'next/image';
 import Link from 'next/link';

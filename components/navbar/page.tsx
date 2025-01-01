@@ -20,8 +20,8 @@ const NavBar = () => {
     return (
         <>
             <header className="py-4 bg-white z-50" >
-                <div className="px-4 mx-auto max-w-9xl sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-around">
+                <div className="px-4 mx-auto max-w-9xl sm:px-6 md:px-10 lg:px-12">
+                    <div className="flex items-center justify-between">
                         {/* LOGO */}
                         <div className="flex-shrink-0">
                             <Link href="/" title="" className="flex gap-2">

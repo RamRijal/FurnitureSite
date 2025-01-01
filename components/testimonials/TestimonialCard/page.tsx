@@ -1,7 +1,7 @@
 import { Testimonial } from '@/types/testimonials';
 import React from 'react'
 import RatingsDisplay from './Ratings/page';
-import { TextFade } from '@/components/UI/TextFadeUp';
+import { TextFade } from '@/UI/TextFadeUp';
 interface ItestimonialProps {
     review: Testimonial;
 }

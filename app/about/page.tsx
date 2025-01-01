@@ -1,4 +1,4 @@
-import { TextFade } from '@/components/UI/TextFadeUp'
+import { TextFade } from '@/UI/TextFadeUp'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
@@ -33,7 +33,7 @@ const About = () => {
                     </TextFade>
                 </div>
 
-                <div className="relative flex-col  py-8 mx-32">
+                <div className="relative flex-col  py-8 mx-8 md:mx-16 xl:mx-32">
                     <p className=" text-black text-justify text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. Rem quam repellat nisi! Quaerat qui, nemo odit iste natus sunt vero, accusantium itaque vitae nostrum placeat quibusdam rerum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. Rem quam repellat nisi! Quaerat qui, nemo odit iste natus sunt vero, accusantium itaque vitae nostrum placeat quibusdam rerum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. </p>
                     <div className="flex justify-between mt-6 ">
                         <div className="md:flex flex-col hidden">
@@ -71,7 +71,7 @@ const About = () => {
 
                     </div>
                     <div className="flex flex-col justify-center items-center w-full mt-6">
-                        <p className='text-[70px] text-[#51B7AE]  font-extrabold mb-4'>What we represent as a brand</p>
+                        <p className='text-4xl text-center md:text-[70px] text-[#51B7AE]  font-extrabold mb-4'>What we represent as a brand</p>
                         <div className="">
                             <Image
                                 loading='lazy' alt='' src='https://images.unsplash.com/photo-1533686309771-f00107cf6004?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' height={700} width={700}></Image>
@@ -100,7 +100,7 @@ const About = () => {
                             </ul>
                         </div>
                         <p className='text-gray-700 w-full my-4 text-lg'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis temporeLorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore
-                            </p>
+                        </p>
                     </div>
 
                 </div>
