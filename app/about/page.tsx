@@ -1,4 +1,4 @@
-import { TextFade } from '@/components/UI/TextFadeUp'
+import { TextFade } from '@/UI/TextFadeUp'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
@@ -33,9 +33,9 @@ const About = () => {
                     </TextFade>
                 </div>
 
-                <div className="relative flex-col  py-8 mx-32 mb-4">
-                        <p className=" text-black text-justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. Rem quam repellat nisi! Quaerat qui, nemo odit iste natus sunt vero, accusantium itaque vitae nostrum placeat quibusdam rerum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. Rem quam repellat nisi! Quaerat qui, nemo odit iste natus sunt vero, accusantium itaque vitae nostrum placeat quibusdam rerum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. </p>
-                     <div className="flex justify-between mt-6 ">
+                <div className="relative flex-col  py-8 mx-8 md:mx-16 xl:mx-32">
+                    <p className=" text-black text-justify text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. Rem quam repellat nisi! Quaerat qui, nemo odit iste natus sunt vero, accusantium itaque vitae nostrum placeat quibusdam rerum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. Rem quam repellat nisi! Quaerat qui, nemo odit iste natus sunt vero, accusantium itaque vitae nostrum placeat quibusdam rerum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, amet facere. </p>
+                    <div className="flex justify-between mt-6 ">
                         <div className="md:flex flex-col hidden">
                             <p className='text-[70px] text-[#51B7AE]  font-extrabold'>Authentic</p>
                             <p className='text-4xl text-[#51B7AE] font-bold -mb-4'>&nbsp;and</p>
@@ -71,16 +71,36 @@ const About = () => {
 
                     </div>
                     <div className="flex flex-col justify-center items-center w-full mt-6">
+                        <p className='text-4xl text-center md:text-[70px] text-[#51B7AE]  font-extrabold mb-4'>What we represent as a brand</p>
                         <div className="">
                             <Image
                                 loading='lazy' alt='' src='https://images.unsplash.com/photo-1533686309771-f00107cf6004?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' height={700} width={700}></Image>
                         </div>
                         <div className="md:flex flex-col hidden justify-center">
                             <FaQuoteLeft className='text-gray-500' size={30} />
-                            <p className='text-gray-700 w-full my-4'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore
+                            <p className='text-gray-700 w-full my-4 text-lg'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore
                             </p>
                             <FaQuoteRight className='text-gray-500 ' size={30} />
                         </div>
+                        <div className="md:flex flex-col hidden justify-center">
+                            <ul className='flex flex-col text-gray-700 w-full my-4 text-lg list-disc gap-2'>
+                                <li className='text-gray-700 text-xl  my-2'>Lorem ipsum dolor sit amet,  Lorem ipsum dolor sit ametconsectetur
+                                </li>
+                                <li className='text-gray-700 text-xl  my-2'>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet
+                                </li>
+
+                                <li className='text-gray-700 text-xl  my-2'>Lorem ipsum dolor sit amet,  Lorem ipsum dolor sit ametconsectetur
+                                </li>
+                                <li className='text-gray-700 text-xl  my-2'>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet
+                                </li>
+                                <li className='text-gray-700 text-xl  my-2'>Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet
+                                </li>
+                                <li className='text-gray-700 text-xl  my-2'>LorLorem ipsum dolor sit amet amet, consectetur
+                                </li>
+                            </ul>
+                        </div>
+                        <p className='text-gray-700 w-full my-4 text-lg'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis temporeLorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore Ipsa provident deleniti deserunt, facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore facilis quo quod minus blanditiis tempore
+                        </p>
                     </div>
 
                 </div>

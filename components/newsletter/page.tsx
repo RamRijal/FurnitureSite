@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
-import { TextFade } from '../UI/TextFadeUp';
+import { TextFade } from '../../UI/TextFadeUp';
 
 const Newsletter = () => {
     return (

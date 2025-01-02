@@ -2,7 +2,7 @@ import { Testimonial } from '@/types/testimonials';
 import React from 'react'
 import TestimonialCard from './TestimonialCard/page';
 import Link from 'next/link';
-import { TextFade } from '../UI/TextFadeUp';
+import { TextFade } from '../../UI/TextFadeUp';
 
 interface ItestimonialProps {
     reviews: Testimonial[];
@@ -22,10 +22,10 @@ const Testimonials = ({ reviews }: ItestimonialProps) => {
                         <Link href="#" title="" className="pb-2 text-base font-bold leading-7 text-[#292e76] transition-all duration-200 border-b-2 border-[#292e76] hover:border-[#444cba] font-pj focus:outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2 hover:text-[#444cba]"> Check all {reviews.length} ss </Link>
                     </div>
 
-                    <div className="relative mt-10 md:mt-24 md:order-2">
+                    <div className="relative xl:mt-24 md:mt-12 md:order-2">
 
 
-                        <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 md:grid-cols-3">
+                        <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 lg:grid-cols-3">
                             {reviews.slice(0, 3).map((review) => (
                                 <TestimonialCard key={review.id} review={review} />
                             )

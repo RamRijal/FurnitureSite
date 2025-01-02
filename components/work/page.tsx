@@ -3,7 +3,7 @@ import React from 'react'
 import Contact from '/public/contact-phone-2-svgrepo-com.svg'
 import Delivery from '/public/delivery-fast-solid-svgrepo-com.svg'
 import Recieved from '/public/christmas-present-gift-birthday-christmas-done-confirm-svgrepo-com.svg'
-import { TextFade } from '../UI/TextFadeUp'
+import { TextFade } from '../../UI/TextFadeUp'
 const Work = () => {
     return (
         <section className="py-12 h-full bg-gray-50 sm:py-16 lg:py-20">

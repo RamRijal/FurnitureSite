@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Counter } from '../UI/Counter';
-import { TextFade } from '../UI/TextFadeUp';
+import { Counter } from '../../UI/Counter';
+import { TextFade } from '../../UI/TextFadeUp';
+import SearchInput from '../../UI/Searchinput';
 
 const backgroundImages = [
   'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -50,7 +51,7 @@ const Hero = () => {
           />
         ))}
 
-        {/* Navigation Buttons */}
+        {/* Navigation LeftRightButtons */}
         <button
           onClick={goToPrevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10"
@@ -84,7 +85,7 @@ const Hero = () => {
                     Buy our products from world&apos;s top furniture store
                   </p>
                 </TextFade>
-                <div className="mt-8 lg:mt-10">
+                <div className="hidden md:block mt-8 lg:mt-10">
                   <Link
                     href="/products"
                     title=""
@@ -97,8 +98,8 @@ const Hero = () => {
 
                 <div className="md:inline-grid grid-cols-3 mt-8 gap-x-8">
                   <div>
-                    <p className="text-6xl font-bold text-gray-300">
-                      <Counter className='text-6xl' from={0} to={50} />
+                    <p className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-300">
+                      <Counter className='text-4xl  md:text-5xl lg:text-6xl' from={0} to={50} />
                       k+</p>
                     <p className="mt-2 text-base font-medium text-gray-400">
                       Furniture Sold
@@ -106,25 +107,38 @@ const Hero = () => {
                   </div>
 
                   <div>
-                    <p className="text-6xl font-bold text-gray-300">
-                      <Counter className='text-6xl' from={0} to={250} />+
+                    <p className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-300">
+                      <Counter className='text-4xl  md:text-5xl lg:text-6xl' from={0} to={250} />+
                     </p>
                     <p className="mt-2 text-base font-medium text-gray-400">
                       Reviews
                     </p>
                   </div>
                   <div>
-                    <p className="text-6xl font-bold text-gray-300">
-                      <Counter className='text-6xl' from={0} to={400} />
+                    <p className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-300">
+                      <Counter className='text-4xl  md:text-5xl lg:text-6xl' from={0} to={400} />
                       +</p>
                     <p className="mt-2 text-base font-medium text-gray-400">
                       Customers
                     </p>
                   </div>
                 </div>
+                <div className="md:hidden block mt-8 lg:mt-10">
+                  <Link
+                    href="/products"
+                    title=""
+                    className="inline-flex items-center justify-center px-8 py-3 text-base font-bold leading-7 text-gray-50 transition-all duration-200 bg-[#292e76] border border-transparent focus:outline-none font-pj hover:bg-[#383fa2] focus:bg-[#292e76]"
+                    role="button"
+                  >
+                    Explore all products
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+          {/* <div className="hidden lg:flex items-center w-full justify-center mt-8 ">
+            <SearchInput />
+          </div> */}
         </div>
       </div>
     </div>

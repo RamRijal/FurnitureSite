@@ -1,4 +1,4 @@
-import { TextFade } from '@/components/UI/TextFadeUp';
+import { TextFade } from '@/UI/TextFadeUp';
 import { IproductProps, Product } from '@/types/product';
 import { getProducts } from '@/utils/api';
 import { useEffect, useState } from 'react';

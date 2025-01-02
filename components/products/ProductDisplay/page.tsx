@@ -1,7 +1,7 @@
 import { getProducts } from '@/utils/api';
 import Link from 'next/link';
 import ProductList from '../ProductList/[id]/page';
-import { TextFade } from '@/components/UI/TextFadeUp';
+import { TextFade } from '@/UI/TextFadeUp';
 
 const ProductDisplay = async () => {
     const products = await getProducts();
