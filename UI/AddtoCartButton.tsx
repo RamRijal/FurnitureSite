@@ -1,13 +1,18 @@
+import { useCart } from '@/context/cartContext';
+import { Product } from '@/types/product';
 import { FaShoppingCart } from 'react-icons/fa';
 import styled from 'styled-components';
 
-const AddtoCartButton = () => {
+const AddtoCartButton = ({ product }: { product: Product }) => {
+  const { addToCart } = useCart();
+
   return (
     <StyledWrapper>
-      <button className="button flex items-center justify-center gap-2">
-        <div className="">
-          <FaShoppingCart size={18}/>
-        </div>
+      <button
+        className="button flex items-center justify-center gap-2"
+        onClick={() => addToCart(product)}
+      >
+          <FaShoppingCart size={18} />
         <span className="button-content">Add to cart</span>
       </button>
     </StyledWrapper>

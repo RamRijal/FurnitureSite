@@ -5,10 +5,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SimilarProducts from '../SimilarProducts/page';
 import Cart from '/public/cart-shopping-svgrepo-com.svg';
+import AddtoCartButton from '@/UI/AddtoCartButton';
+import { useState } from 'react';
 // import Dropdown from '/public/down-chevron-svgrepo-com.svg'
 
 
 const ProductDetails = ({ product }: IproductProps) => {
+  const [wished, setWished] = useState(false);
+  const toggleWish = () => {
+    setWished(!wished);
+  }
 
   return (
     <>
@@ -118,63 +124,61 @@ const ProductDetails = ({ product }: IproductProps) => {
               </div>
               <div className="mt-5 sm:mt-5 sm:flex sm:items-center sm:space-x-5">
                 {/* Add to cart */}
-                <button
-                  type="button"
-                  className="flex
-                  gap-2
-                                items-center
-                                justify-center
-                                w-full
-                                px-7
-                                py-3
-                                text-base
-                                font-bold
-                                leading-7
-                                text-center text-white
-                                transition-all
-                                duration-200
-                                bg-[#292e76]
-                                border border-transparent
-                                rounded-md
-                                inlin-flex
-                                sm:w-auto
-                                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
-                                hover:bg-[#383fa0]
-                            "
-                >
-                  <Image width={20} height={20} src={Cart} alt='' /> Add to cart
-                </button>
+                <div className="w-60">
+                  <AddtoCartButton product={product} />
+                </div>
                 {/* Add to wishlist */}
-                <button
-                  type="button"
-                  className="
-                                inline-flex
-                                items-center
-                                justify-center
-                                w-full
-                                px-4
-                                py-3
-                                mt-4
-                                text-base
-                                font-bold
-                                leading-7
-                                text-center text-gray-900
-                                transition-all
-                                duration-200
-                                bg-transparent
-                                border border-gray-300
-                                rounded-md
-                                sm:mt-0 sm:w-auto
-                                 hover:bg-pink-600
-                                focus:border-gray-300 focus:bg-white focus:text-gray-900
-                                hover:text-white
-                            "
-                >
-                  <svg className="w-5 h-5 mr-2.5 focus:bg-pink-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
-                  Add to wishlist
-                </button>
+                <div className="w-full max-w-xs mx-auto">
+                  <button
+                    onClick={() => toggleWish()}
+                    type="button"
+                    className="
+                               relative
+                               flex items-center justify-center
+                               w-full h-14 py-3
+                               bg-transparent border border-gray-300 rounded-lg
+                               text-gray-900 text-base font-semibold leading-7
+                               cursor-pointer
+                               transition-all duration-200
+                               hover:bg-pink-600 hover:text-white  focus:ring-offset-2
+                               "
+                    aria-label="Add to wishlist"
+                  >
+                    {wished ? (
+                      <svg
+                        className="w-5 h-5 mr-2.5 text-pink-600 hover:text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                          className="w-5 h-5 mr-2.5 text-pink-600 hover:text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                          fill="#E0478B"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                        />
+                      </svg>
+                    )}
+                    Add to Wishlist
+                  </button>
+                </div>
+
               </div>
               {/* Desciptions */}
               <h1 className='mt-8 text-2xl text-gray-700 font-bold'>Description</h1>

@@ -7,6 +7,7 @@ import "./globals.css";
 import { useEffect, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import { Loader } from "@/UI/Loader";
+import { CartProvider } from "@/context/cartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,18 +37,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <NavBar />
-        <main className=" relative">
-          {isLoading ? (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-              <Loader />
-            </div>
-          ) : (
-            children
-          )}
-        </main>
-        <Footer />
+        <CartProvider>
+          <NavBar />
+          <main className=" relative">
+            {isLoading ? (
+              <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+                <Loader />
+              </div>
+            ) : (
+              children
+            )}
+          </main>
+          <Footer />
+        </CartProvider>
       </body>
-    </html>
+    </html >
   );
 }

@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Counter } from '../../UI/Counter';
 import { TextFade } from '../../UI/TextFadeUp';
-import SearchInput from "@/UI/Searchinput";
 
 const backgroundImages = [
   'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -53,6 +52,7 @@ const Hero = () => {
 
         {/* Navigation LeftRightButtons */}
         <button
+          type='button'
           onClick={goToPrevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10"
           aria-label="Previous slide"
@@ -60,6 +60,7 @@ const Hero = () => {
           <FaChevronLeft size={24} />
         </button>
         <button
+          type='button'
           onClick={goToNextSlide}
           className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 z-10"
           aria-label="Next slide"
