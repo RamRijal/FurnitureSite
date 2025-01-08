@@ -1,10 +1,10 @@
 'use client'
-import React, { useState, useEffect } from 'react';
 import Link from "next/link";
+import { useEffect, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Counter } from '../../UI/Counter';
 import { TextFade } from '../../UI/TextFadeUp';
-import SearchInput from '../../UI/Searchinput';
+import SearchInput from "@/UI/Searchinput";
 
 const backgroundImages = [
   'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -74,11 +74,14 @@ const Hero = () => {
         <div className="relative h-full py-12 sm:py-16 lg:py-20 xl:py-16">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="flex flex-col justify-center items-center h-full">
-              <div className="max-w-md mx-auto text-center xl:max-w-xl lg:mx-0 lg:text-center">
-                <TextFade direction='up'><h1 className="text-3xl font-bold text-gray-50 sm:text-4xl md:text-5xl lg:leading-tight xl:text-6xl">
-                  Collect<span className="text-[#51b7ae]"> rare</span>{" "}
-                  <span className="text-[#51b7ae]"> aesthetic</span> furniture
-                </h1>
+              <div className="max-w-md mx-auto xl:max-w-xl lg:mx-0 text-center">
+                <TextFade direction='up'>
+                  <h1 className="text-3xl font-bold text-gray-50 sm:text-4xl md:text-5xl lg:leading-tight xl:text-6xl">
+                    Collect
+                    <span className="text-[#51b7ae]"> rare</span>{" "}
+                    <span className="text-[#51b7ae]"> aesthetic</span>{" "}
+                    furniture
+                  </h1>
                 </TextFade>
                 <TextFade direction='up'>
                   <p className="mt-5 text-lg font-medium text-gray-50 lg:mt-8">
@@ -96,9 +99,9 @@ const Hero = () => {
                   </Link>
                 </div>
 
-                <div className="md:inline-grid grid-cols-3 mt-8 gap-x-8">
-                  <div>
-                    <p className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-300">
+                <div className="md:inline-grid grid-cols-3 mt-8 gap-12 gap-x-8">
+                  <div className="my-4">
+                    <p className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-300">
                       <Counter className='text-4xl  md:text-5xl lg:text-6xl' from={0} to={50} />
                       k+</p>
                     <p className="mt-2 text-base font-medium text-gray-400">
@@ -106,7 +109,7 @@ const Hero = () => {
                     </p>
                   </div>
 
-                  <div>
+                  <div className="my-4">
                     <p className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-300">
                       <Counter className='text-4xl  md:text-5xl lg:text-6xl' from={0} to={250} />+
                     </p>
@@ -114,7 +117,7 @@ const Hero = () => {
                       Reviews
                     </p>
                   </div>
-                  <div>
+                  <div className="my-4">
                     <p className="text-4xl  md:text-5xl lg:text-6xl font-bold text-gray-300">
                       <Counter className='text-4xl  md:text-5xl lg:text-6xl' from={0} to={400} />
                       +</p>
@@ -136,9 +139,9 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          {/* <div className="hidden lg:flex items-center w-full justify-center mt-8 ">
+          {/* <div className="hidden lg:flex items-center justify-center mt-8 ">
             <SearchInput />
-          </div> */}
+          </div>  */}
         </div>
       </div>
     </div>

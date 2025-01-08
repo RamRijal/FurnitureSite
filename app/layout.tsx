@@ -10,7 +10,7 @@ import { Loader } from "@/UI/Loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const LOADING_DELAY = 400; // Extracted as a constant for easier maintenance
+const LOADING_DELAY = 300; // Extracted as a constant for easier maintenance
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);

@@ -71,7 +71,7 @@ const About = () => {
 
                     </div>
                     <div className="flex flex-col justify-center items-center w-full mt-6">
-                        <p className='text-4xl text-center md:text-[70px] text-[#51B7AE]  font-extrabold mb-4'>What we represent as a brand</p>
+                        <p className='text-4xl text-center md:text-[70px] text-[#51B7AE]  font-extrabold my-10'>What we represent as a brand</p>
                         <div className="">
                             <Image
                                 loading='lazy' alt='' src='https://images.unsplash.com/photo-1533686309771-f00107cf6004?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' height={700} width={700}></Image>
