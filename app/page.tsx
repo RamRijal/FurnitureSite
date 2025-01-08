@@ -14,7 +14,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <div className="hidden lg:block absolute lg:top-[610px] lg:left-[45px] xl:top-[520px] xl:left-[325px]">
+      <div className="hidden lg:block absolute lg:top-[510px] lg:left-[180px] xl:top-[520px] xl:left-[390px]">
         <SearchInput />
       </div>
       <Work />
@@ -25,3 +25,7 @@ export default async function Home() {
     </>
   );
 }
+{/* 
+      
+      <div className="hidden lg:flex absolute  items-center w-full justify-center  lg:top-[610px] lg:left-[45px] xl:top-[520px] xl:left-[325px]">
+      </div> */}

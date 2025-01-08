@@ -24,7 +24,7 @@ const Categories: React.FC<CategoriesProps> = ({ products, onFilter }) => {
                 <button
                     key={category}
                     className={`px-4 py-2 rounded-full ${selectedCategory === category
-                        ? 'bg-[#51b7ae] text-white'
+                        ? 'bg-[#4eb5ac] text-white'
                         : 'bg-gray-200 text-gray-600'
                         }`}
                     onClick={() => setSelectedCategory(category)}
