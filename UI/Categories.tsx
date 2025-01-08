@@ -19,12 +19,12 @@ const Categories: React.FC<CategoriesProps> = ({ products, onFilter }) => {
     }, [selectedCategory, products, onFilter]);
 
     return (
-        <div className="flex justify-center space-x-4 mt-6">
+        <div className="flex justify-center space-x-4 mt-6 gap-2">
             {categories.map((category) => (
                 <button
                     key={category}
-                    className={`px-4 py-2 rounded-full ${selectedCategory === category
-                        ? 'bg-[#4eb5ac] text-white'
+                    className={`px-4 py-2 rounded-full  ${selectedCategory === category
+                        ? 'bg-[#51B7AE] text-white'
                         : 'bg-gray-200 text-gray-600'
                         }`}
                     onClick={() => setSelectedCategory(category)}

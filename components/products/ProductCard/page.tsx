@@ -70,14 +70,14 @@ const ProductCard = ({ product }: IproductProps) => {
           </div>
           <div className="flex ">
             {isfavourite ?
-              <button className='text-red-500  px-2 rounded-md' onClick={HandleFavourite}><HiHeart size={30} /></button> :
-              <button className='text-red-500  px-2 rounded-md' onClick={HandleFavourite}><BiHeart size={30} /></button>
+              <button type='button' className='text-red-500  px-2 rounded-md' onClick={HandleFavourite}><HiHeart size={30} /></button> :
+              <button type='button' className='text-red-500  px-2 rounded-md' onClick={HandleFavourite}><BiHeart size={30} /></button>
             }
           </div>
         </div>
         <Link href='/'>
           <div className="flex justify-center items-center my-1">
-            <AddtoCartButton />
+            <AddtoCartButton product={product}/>
           </div>
         </Link>
       </div>

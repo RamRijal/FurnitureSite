@@ -22,13 +22,13 @@ body {
 
 .backG {
   position: relative; /* Makes sure the pseudo-element is positioned correctly */
-  background-image: url('https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background-image: url("https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600");
   background-size: cover;
   background-position: center;
 }
 
 .backG::before {
-  content: ''; /* Necessary for pseudo-elements */
+  content: ""; /* Necessary for pseudo-elements */
   position: absolute;
   top: 0;
   left: 0;
@@ -38,6 +38,7 @@ body {
   z-index: 0; /* Ensures it stays above the image but below any content */
 }
 
-.foreG{
+.foreG {
   z-index: 2;
 }
+

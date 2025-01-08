@@ -1,18 +1,45 @@
 'use client'
-import Image from 'next/image'
-import { useState } from 'react'
-import Location from '/public/location-svgrepo-com.svg'
-// import Call from '/public/call-receive-svgrepo-com.svg'
-import WhatsApp from '/public/whatsapp-svgrepo-com.svg'
-// import Facebook from '/public/facebook-svgrepo-com.svg'
+import { useCart } from '@/context/cartContext'
 import Logo from '@/public/Furphing.png'
+import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import Cart from '/public/cart-shopping-svgrepo-com.svg'
 import Instagram from '/public/instagram-svgrepo-com.svg'
+import Location from '/public/location-svgrepo-com.svg'
+import WhatsApp from '/public/whatsapp-svgrepo-com.svg'
 
 const NavBar = () => {
+    const { cartItems, removeFromCart } = useCart();
+
     const [expand, setExpand] = useState(false);
     const [expandCart, setExpandCart] = useState(false);
+
+
+    const calculateTotal = () => {
+        return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    };
+    const calculateDeliveryCharge = () => {
+        return 200;  // Example: a fixed discount amount or dynamic delivery logic.
+    };
+    const calculateNetAmount = () => {
+        return calculateTotal() - calculateDeliveryCharge();
+    };
+
+    // Add/remove body class based on `expandCart` state
+    useEffect(() => {
+        if (expandCart) {
+            document.body.classList.add('body-no-scroll');
+        } else {
+            document.body.classList.remove('body-no-scroll');
+        }
+
+        // Cleanup on component unmount
+        return () => {
+            document.body.classList.remove('body-no-scroll');
+        };
+    }, [expandCart]);
+
 
     const toggleExpand = () => {
         setExpand(!expand);
@@ -72,8 +99,10 @@ const NavBar = () => {
 
                             <Link
                                 href="/"
-                                title=""
-                                className="
+                            >
+                                <button
+                                    type='button'
+                                    className="
                                 h-11
                                 w-20
                                 bg-[#292e76]
@@ -95,11 +124,11 @@ const NavBar = () => {
                                 focus:outline-none
                               hover:bg-[#383fa2] hover:text-white
                                 focus:bg-[#292e76] focus:text-white "
-                                role="button"
-                                onClick={() => toggleExpandCart()}
-                            >
-                                <Image width={25} height={25} src={Cart} className="opacity-100  text-white rounded-full focus:outline-none focus:ring-2 " alt='' />
-                                <div className='absolute flex z-50 bg-red-600 h-7 w-7 rounded-full top-3 right-12 justify-center items-center text-xs font-normal p-3'>112 </div>
+                                    onClick={() => toggleExpandCart()}
+                                >
+                                    <Image width={25} height={25} src={Cart} className="opacity-100  text-white rounded-full focus:outline-none focus:ring-2 " alt='' />
+                                    <div className='absolute flex z-50 bg-red-600 h-7 w-7 rounded-full top-3 right-12 justify-center items-center text-xs font-normal p-3'>{cartItems.length} </div>
+                                </button>
                             </Link>
 
                         </nav>
@@ -174,53 +203,97 @@ const NavBar = () => {
                     </div>
                 </div>
             </div>
-            {expandCart &&
-                <div id="drawer-navigation" className="fixed top-0 right-0 z-50 w-96 h-screen p-4 overflow-y-auto transition-transform  bg-white dark:bg-gray-800" aria-labelledby="drawer-navigation-label">
-                    <h5 id="drawer-navigation-label" className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Review Cart</h5>
-                    <button type="button" onClick={() => toggleExpandCart()} data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
-                        <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        <span className="sr-only">Close menu</span>
-                    </button>
-                    <div className="py-4 overflow-y-auto">
-                        <ul className="flex flex-col space-y-2 font-medium gap-4 my-2">
-
-                            <li>
-                                <Link href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                                    <div className="flex gap-3 w-full">
-                                        <Image alt='' src={'/Furphing.png'} height={100} width={100} />
-                                        <div className="flex justify-between w-full">
-                                        <div className="flex flex-col text-left">
-                                            <span className="text-xl">Harry Potter</span>
-                                            <span className=" text-xs font-light">Modern Sofa</span>
-                                            <span className=" text-sm">No. of items:&nbsp;12</span>
-                                        </div>
-                                        <p className='flex justify-center items-center text-3xl text-green-600'>$200</p>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                                    <div className="flex gap-3 w-full">
-                                        <Image alt='' src={'/Furphing.png'} height={100} width={100} />
-                                        <div className="flex justify-between w-full">
-                                        <div className="flex flex-col text-left">
-                                            <span className="text-xl">Harry Potter</span>
-                                            <span className=" text-xs font-light">Modern Sofa</span>
-                                            <span className=" text-sm">No. of items:&nbsp;12</span>
-                                        </div>
-                                        <p className='flex justify-center items-center text-3xl text-green-600'>$200</p>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </li>
-                           
-
-                        </ul>
-                        <button className='flex justify-center shadow-md w-full bg-[#1D6961] p-6 bottom-0'>Proceed to Checkout</button>
+            {/* SIDEBAR ADDTOCART */}
+            <div
+                id="drawer-navigation"
+                className={`fixed top-0 right-0 z-50 w-96 h-screen p-4 bg-white overflow-y-auto overflow-x-hidden  dark:bg-slate-800 transform transition-transform duration-300 ${expandCart ? 'translate-x-0' : 'translate-x-full'
+                    }`}
+                aria-labelledby="drawer-navigation-label"
+            >
+                <h5
+                    id="drawer-navigation-label"
+                    className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
+                >
+                    Review Cart
+                </h5>
+                <button
+                    type="button"
+                    onClick={() => toggleExpandCart()}
+                    data-drawer-hide="drawer-navigation"
+                    aria-controls="drawer-navigation"
+                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                >
+                    <svg
+                        aria-hidden="true"
+                        className="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fillRule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clipRule="evenodd"
+                        ></path>
+                    </svg>
+                    <span className="sr-only">Close menu</span>
+                </button>
+                {cartItems.length === 0 ?
+                    <div className='flex flex-col justify-center items-center h-96'>
+                        <p className='flex justify-center items-center h-12 text-2xl text-center mb-4'>Cart is Empty!</p>
+                        <Link
+                            href="/products"
+                            title=""
+                            className="inline-flex items-center justify-center px-8 py-3 text-base font-bold leading-7 text-gray-50 transition-all duration-200 bg-[#292e76] border border-transparent focus:outline-none font-pj hover:bg-[#383fa2] focus:bg-[#292e76]"
+                            role="button"
+                        >
+                            Explore all products
+                        </Link>
                     </div>
-                </div>
-            }
+                    :
+                    <>
+                        <div className="py-4 ">
+                            <ul className="flex flex-col space-y-2 font-medium gap-4 my-2">
+                                {cartItems.map((item) => {
+                                    return <li key={item.id}>
+                                        <Link href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  group">
+                                            <div className="flex gap-3 w-full">
+                                                <Image alt='' src={item.image} height={100} className='object-cover h-24' width={100} />
+                                                <div className="flex justify-between w-full ">
+                                                    <div className="flex flex-col text-left gap-1">
+                                                        <span className="text-xl">{item.name}</span>
+                                                        <span className=" text-xs -mt-1 text-gray-400 font-light">{item.category}</span>
+                                                        <span className=" text-sm ">Ratings:&nbsp;{item.rating}/5</span>
+                                                        <span className=" text-sm">No. of items:&nbsp;{item.quantity}</span>
+                                                    </div>
+                                                    <p className='flex justify-center items-center text-3xl text-green-600'>${item.price * item.quantity}</p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                        <button onClick={() => removeFromCart(`${item.id}`)} className=" bg-[#328981] hover:bg-[#237e75] hover:scale-105 p-3 flex justify-center items-center text-center w-full text-base">Remove from cart</button>
+                                    </li>
+                                })
+                                }
+                            </ul>
+                            <div className="flex flex-col gap-2 my-2">
+                                <p className='text-xl'> Total Amount: ${`${calculateTotal()}`}</p>
+                                <p className='text-xl'> Delivery Charge: ${`${calculateDeliveryCharge()}` }</p>
+                                <p className='text-xl'> Net Amount: ${`${calculateNetAmount()}` }</p>
+                            </div>
+                        </div>
+                        <div className="button absolute w-full">
+                            <Link href={'/'}>
+                                <button onClick={()=>alert("Proceeding to checkout..")} className='bg-green-600 p-3 flex justify-center items-center text-center w-full text-lg'>
+                                    Proceed to checkout
+                                </button>
+                            </Link>
+                        </div>
+                    </>
+                }
+
+            </div >
+
+
         </>
     )
 }
