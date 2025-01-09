@@ -26,7 +26,7 @@ const NoOfItems = () => {
     };
 
     return (
-        <form className="max-w-xs my-4">
+        <div className="max-w-xs my-4">
             <div className="relative flex items-center max-w-[10rem] gap-2">
                 {/* DECREASE BUTTON */}
                 <button
@@ -56,7 +56,7 @@ const NoOfItems = () => {
                     <p className='text-white text-4xl'>+</p>
                 </button>
             </div>
-        </form>
+        </div>
     );
 };
 

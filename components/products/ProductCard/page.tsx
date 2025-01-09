@@ -62,7 +62,7 @@ const ProductCard = ({ product }: IproductProps) => {
               </p>
             </div>
             <div className="flex justify-between my-1 ">
-              <p className=' text-left text-sm text-gray-900 '>{product.description.slice(0, 50)}...</p>
+              <p className=' text-left text-sm text-gray-900 '>{product.description.slice(0, 40)}...</p>
             </div>
             <div className="flex w-20 justify-between items-center my-1 ">
               {RatingsDisplay(product.rating)}
@@ -75,11 +75,9 @@ const ProductCard = ({ product }: IproductProps) => {
             }
           </div>
         </div>
-        <Link href='/'>
           <div className="flex justify-center items-center my-1">
             <AddtoCartButton product={product}/>
           </div>
-        </Link>
       </div>
     </div >
   );
