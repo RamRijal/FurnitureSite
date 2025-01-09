@@ -8,8 +8,11 @@ import Cart from '/public/cart-shopping-svgrepo-com.svg'
 import Instagram from '/public/instagram-svgrepo-com.svg'
 import Location from '/public/location-svgrepo-com.svg'
 import WhatsApp from '/public/whatsapp-svgrepo-com.svg'
+import { usePathname } from 'next/navigation'
 
 const NavBar = () => {
+    const pathname = usePathname(); // Initialize useRouter
+
     const { cartItems, removeFromCart } = useCart();
 
     const [expand, setExpand] = useState(false);
@@ -40,6 +43,10 @@ const NavBar = () => {
         };
     }, [expandCart]);
 
+    // Close the sidebar when the route changes
+    useEffect(() => {
+        setExpandCart(false); // Close the sidebar on route change
+    }, [pathname]); // Run the effect when the pathname changes
 
     const toggleExpand = () => {
         setExpand(!expand);
@@ -80,12 +87,12 @@ const NavBar = () => {
                         </div>
                         {/* NAVIGATION LINKS LARGE */}
                         <nav className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-12">
-                            <Link href="/" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Home </Link>
+                            <Link href="/" title="" className="text-base font-semibold text-gray-900 focus:text-[#51B7AE] focus:font-bold focus:text-xl transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Home </Link>
 
-                            <Link href="/products" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Products </Link>
+                            <Link href="/products" title="" className="text-base font-semibold text-gray-900 focus:text-[#51B7AE] focus:font-bold focus:text-xl transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Products </Link>
 
-                            <Link href="/about" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> About </Link>
-                            <Link href="/contact" title="" className="text-base font-semibold text-gray-900 transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Contact Us </Link>
+                            <Link href="/about" title="" className="text-base font-semibold text-gray-900 focus:text-[#51B7AE] focus:font-bold focus:text-xl transition-all duration-200 rounded font-pj hover:text-opacity-50 "> About </Link>
+                            <Link href="/contact" title="" className="text-base font-semibold text-gray-900 focus:text-[#51B7AE] focus:font-bold focus:text-xl transition-all duration-200 rounded font-pj hover:text-opacity-50 "> Contact Us </Link>
 
                         </nav>
 
@@ -249,6 +256,20 @@ const NavBar = () => {
                         >
                             Explore all products
                         </Link>
+                        {/* <div className=" w-full">
+                            <div className="flex flex-col gap-2 my-2">
+                                <p className='text-xl'> Total Amount: ${`${calculateTotal()}`}</p>
+                                <p className='text-xl'> Delivery Charge: ${`${calculateDeliveryCharge()}`}</p>
+                                <p className='text-xl'> Net Amount: ${`${calculateNetAmount()}`}</p>
+                            </div>
+                            <div className="button absolute w-full">
+                                <Link href={'/checkout'}>
+                                    <button onClick={() => alert("Proceeding to checkout..")} className='bg-green-600 p-3 flex justify-center items-center text-center w-full text-lg'>
+                                        Proceed to checkout
+                                    </button>
+                                </Link>
+                            </div>
+                        </div> */}
                     </div>
                     :
                     <>
@@ -256,37 +277,40 @@ const NavBar = () => {
                             <ul className="flex flex-col space-y-2 font-medium gap-4 my-2">
                                 {cartItems.map((item) => {
                                     return <li key={item.id}>
-                                        <Link href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white  group">
-                                            <div className="flex gap-3 w-full">
-                                                <Image alt='' src={item.image} height={100} className='object-cover h-24' width={100} />
-                                                <div className="flex justify-between w-full ">
-                                                    <div className="flex flex-col text-left gap-1">
-                                                        <span className="text-xl">{item.name}</span>
-                                                        <span className=" text-xs -mt-1 text-gray-400 font-light">{item.category}</span>
-                                                        <span className=" text-sm ">Ratings:&nbsp;{item.rating}/5</span>
-                                                        <span className=" text-sm">No. of items:&nbsp;{item.quantity}</span>
-                                                    </div>
-                                                    <p className='flex justify-center items-center text-3xl text-green-600'>${item.price * item.quantity}</p>
+
+                                        <div className="flex gap-3 w-full">
+                                            <Image alt='' src={item.image} height={100} className='object-cover h-24' width={100} />
+                                            <div className="flex justify-between w-full ">
+                                                <div className="flex flex-col text-left gap-1">
+                                                    <span className="text-xl">{item.name}</span>
+                                                    <span className=" text-xs -mt-1 text-gray-400 font-light">{item.category}</span>
+                                                    <span className=" text-sm ">Ratings:&nbsp;{item.rating}/5</span>
+                                                    <span className=" text-sm">No. of items:&nbsp;{item.quantity}</span>
                                                 </div>
+                                                <p className='flex justify-center items-center text-3xl text-green-600'>${item.price * item.quantity}</p>
                                             </div>
-                                        </Link>
+                                        </div>
+
                                         <button onClick={() => removeFromCart(`${item.id}`)} className=" bg-[#328981] hover:bg-[#237e75] hover:scale-105 p-3 flex justify-center items-center text-center w-full text-base">Remove from cart</button>
                                     </li>
                                 })
                                 }
                             </ul>
+
+                        </div>
+                        <div className=" w-full">
                             <div className="flex flex-col gap-2 my-2">
                                 <p className='text-xl'> Total Amount: ${`${calculateTotal()}`}</p>
-                                <p className='text-xl'> Delivery Charge: ${`${calculateDeliveryCharge()}` }</p>
-                                <p className='text-xl'> Net Amount: ${`${calculateNetAmount()}` }</p>
+                                <p className='text-xl'> Delivery Charge: ${`${calculateDeliveryCharge()}`}</p>
+                                <p className='text-xl'> Net Amount: ${`${calculateNetAmount()}`}</p>
                             </div>
-                        </div>
-                        <div className="button absolute w-full">
-                            <Link href={'/'}>
-                                <button onClick={()=>alert("Proceeding to checkout..")} className='bg-green-600 p-3 flex justify-center items-center text-center w-full text-lg'>
-                                    Proceed to checkout
-                                </button>
-                            </Link>
+                            <div className="button  w-full">
+                                <Link href={'/checkout'}>
+                                    <button onClick={() => alert("Proceeding to checkout..")} className='bg-green-600 p-3 flex justify-center items-center text-center w-full text-lg'>
+                                        Proceed to checkout
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </>
                 }
