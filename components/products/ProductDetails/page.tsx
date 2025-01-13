@@ -1,21 +1,45 @@
 'use client'
+import AddtoCartButton from '@/UI/AddtoCartButton';
 import NoOfItems from '@/UI/NoOfItems';
-import { IproductProps } from '@/types/product';
+import { IproductProps, Product } from '@/types/product';
 import Image from 'next/image';
 import Link from 'next/link';
-import SimilarProducts from '../SimilarProducts/page';
-import Cart from '/public/cart-shopping-svgrepo-com.svg';
-import AddtoCartButton from '@/UI/AddtoCartButton';
 import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import SimilarProducts from '../SimilarProducts/page';
 // import Dropdown from '/public/down-chevron-svgrepo-com.svg'
 
 
 const ProductDetails = ({ product }: IproductProps) => {
   const [wished, setWished] = useState(false);
+  const [cart, setCart] = useState<{ item: Product; quantity: number }[]>([]);
+  const [quantity, setQuantity] = useState(1);
+
   const toggleWish = () => {
     setWished(!wished);
   }
 
+  const handleAddToCart = () => {
+    // Check if the product already exists in the cart
+    const existingProduct = cart.find((cartItem) => cartItem.item.id === product.id);
+
+    if (existingProduct) {
+      // Update quantity
+      setCart(
+        cart.map((cartItem) =>
+          cartItem.item.id === product.id
+            ? { ...cartItem, quantity: cartItem.quantity + quantity }
+            : cartItem
+        )
+      );
+    } else {
+      // Add new product
+      setCart([...cart, { item: product, quantity }]);
+    }
+
+    toast.success("Product added to cart!", { position: "top-center" });
+
+  };
   return (
     <>
       <section className=" bg-gray-900 max-w-full">
@@ -23,7 +47,7 @@ const ProductDetails = ({ product }: IproductProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-10 xl:gap-x-20">
             {/* ImageDisplay */}
             <div className="relative lg:col-span-5">
-              <Image loading='lazy' height={300} width={300} className="lg:ml-8 object-cover p-4 lg:w-full lg:h-full sm:rounded-md" src={product.image} alt="" />
+              <Image loading='lazy' height={300} width={300} className="lg:ml-8 object-cover px-4 lg:w-full lg:h-full sm:rounded-md" src={product.image} alt="" />
 
               <div className="w-2.5 h-2.5 bg-white/40 rounded-full"></div>
               <div className="absolute lg:ml-8 p-4 -translate-x-1/2 left-1/2 bottom-6">
@@ -120,12 +144,13 @@ const ProductDetails = ({ product }: IproductProps) => {
 
               <div className=''>
                 <h1 className=' font-semibold text-xl text-gray-900'>No of items:</h1>
-                <NoOfItems />
+                <NoOfItems onChange={setQuantity} />
               </div>
               <div className="mt-5 sm:mt-5 sm:flex sm:items-center sm:space-x-5">
                 {/* Add to cart */}
-                <div className="w-60">
-                  <AddtoCartButton product={product} />
+                <div onClick={handleAddToCart} className="w-60">
+                  <AddtoCartButton product={product} quantity={quantity}/>
+                  <ToastContainer />
                 </div>
                 {/* Add to wishlist */}
                 <div className="w-full max-w-xs mx-auto">
@@ -161,9 +186,9 @@ const ProductDetails = ({ product }: IproductProps) => {
                       </svg>
                     ) : (
                       <svg
-                          className="w-5 h-5 mr-2.5 text-pink-600 hover:text-white"
+                        className="w-5 h-5 mr-2.5 text-pink-600 hover:text-white"
                         xmlns="http://www.w3.org/2000/svg"
-                          fill="#E0478B"
+                        fill="#E0478B"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >

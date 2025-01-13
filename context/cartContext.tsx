@@ -5,7 +5,7 @@ import { createContext, useContext, useState } from "react";
 // Type definition
 interface CartContextProps {
     cartItems: Product[];
-    addToCart: (product: Product) => void;
+    addToCart: (product: Product, quantity: number) => void;
     removeFromCart: (productId: string) => void;
 }
 
@@ -16,17 +16,17 @@ const CartContext = createContext<CartContextProps | undefined>(undefined);
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     const [cartItems, setCartItems] = useState<Product[]>([]);
 
-    const addToCart = (product: Product) => {
+    const addToCart = (product: Product, quantity: number) => {
         setCartItems((prevItems) => {
             const existingItem = prevItems.find(cartItem => cartItem.id === product.id);
             if (existingItem) {
                 return prevItems.map(cartItem =>
                     cartItem.id === product.id
-                        ? { ...cartItem, quantity: cartItem.quantity + 1, totalPrice: (cartItem.quantity + 1) * cartItem.price }
+                        ? { ...cartItem, quantity, totalPrice: (cartItem.quantity + 1) * cartItem.price }
                         : cartItem
                 );
             } else {
-                return [...prevItems, { ...product, quantity: 1, totalPrice: product.price }];
+                return [...prevItems, { ...product, quantity, totalPrice: product.price }];
             }
         });
 

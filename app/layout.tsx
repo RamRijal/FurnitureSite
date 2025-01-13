@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { Loader } from "@/UI/Loader";
 import { CartProvider } from "@/context/cartContext";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 const LOADING_DELAY = 300; // Extracted as a constant for easier maintenance
@@ -34,10 +35,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return () => clearTimeout(timer);
   }, [currentPath, startLoading]);
 
+   
+
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
         <CartProvider>
+         
           <NavBar />
           <main className=" relative">
             {isLoading ? (
