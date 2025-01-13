@@ -3,16 +3,21 @@ import { Product } from '@/types/product';
 import { FaShoppingCart } from 'react-icons/fa';
 import styled from 'styled-components';
 
-const AddtoCartButton = ({ product }: { product: Product }) => {
+interface AddtoCartButtonProps {
+  product: Product;
+  quantity: number;
+}
+
+const AddtoCartButton: React.FC<AddtoCartButtonProps> = ({ product, quantity }) => {
   const { addToCart } = useCart();
 
   return (
     <StyledWrapper>
       <button
         className="button flex items-center justify-center gap-2"
-        onClick={() => addToCart(product)}
+        onClick={() => addToCart(product, quantity)}
       >
-          <FaShoppingCart size={18} />
+        <FaShoppingCart size={18} />
         <span className="button-content">Add to cart</span>
       </button>
     </StyledWrapper>

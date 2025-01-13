@@ -7,19 +7,22 @@ import Hero from "../components/heroSection/page";
 import Testimonials from "../components/testimonials/page";
 import Work from "../components/work/page";
 
+
 export default async function Home() {
+ 
 
   const testimonials = await getTestimonials();
 
   return (
     <>
+      
       <Hero />
       <div className="hidden lg:block absolute lg:top-[510px] lg:left-[180px] xl:top-[520px] xl:left-[390px]">
         <SearchInput />
       </div>
       <Work />
-      <AboutUs />
       <ProductDisplay />
+      <AboutUs />
       <Testimonials reviews={testimonials} />
       <Newsletter />
     </>

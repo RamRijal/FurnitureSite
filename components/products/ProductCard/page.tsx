@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { BiHeart } from 'react-icons/bi';
 import { HiHeart } from 'react-icons/hi';
+import { ToastContainer, toast } from "react-toastify";
+
 
 interface IproductProps {
   product: Product;
@@ -18,6 +20,13 @@ const ProductCard = ({ product }: IproductProps) => {
   const HandleFavourite = () => {
     setIsFavorite(!isfavourite);
   }
+
+  const showToastMessage = () => {
+    toast.success("Product added to cart.", {
+      position: "top-center"
+    });
+  };
+
   return (
     <div className="relative group">
       <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-lg">
@@ -75,9 +84,10 @@ const ProductCard = ({ product }: IproductProps) => {
             }
           </div>
         </div>
-          <div className="flex justify-center items-center my-1">
-            <AddtoCartButton product={product}/>
-          </div>
+        <div onClick={showToastMessage} className="flex justify-center items-center my-1">
+          <AddtoCartButton product={product} quantity={1} />
+          <ToastContainer />
+        </div>
       </div>
     </div >
   );

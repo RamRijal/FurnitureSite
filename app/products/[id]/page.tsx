@@ -9,7 +9,8 @@ interface IProductsPageProps {
     }
 }
 const ProductPage = async ({ params }: IProductsPageProps) => {
-    const product = await getProductByID(params.id);
+    const { id } = params; // Destructure `id` to ensure clarity.
+    const product = await getProductByID(id);
 
     if (!product) {
         return (

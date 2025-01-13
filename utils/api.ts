@@ -452,11 +452,16 @@ export const getProducts = async (): Promise<Product[]> => {
 export const getProductByID = async (
   id: string
 ): Promise<Product | undefined> => {
-  const products = await getProducts();
-  const product = products.find(
-    (product: { id: string }) => product.id === id || null
-  );
-  return product;
+  try {
+    const products = await getProducts();
+    const product = products.find(
+      (product: { id: string }) => product.id === id || null
+    );
+    return product;
+  } catch (error) {
+    console.error("Error fetching product by ID:", error);
+    return undefined; // Return undefined if an error occurs
+  }
 };
 
 export const getTestimonials = async () => {
