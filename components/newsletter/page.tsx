@@ -4,9 +4,9 @@ import { TextFade } from '../../UI/TextFadeUp';
 
 const Newsletter = () => {
     return (
-        <div className="relative py-12 overflow-hidden bg-gray-100 sm:py-16 lg:py-18 xl:py-18">
+        <div className="relative py-12 overflow-hidden bg-gray-200 sm:py-16 lg:py-18 xl:py-18">
             <div className="absolute inset-0">
-                <Image height={100} width={100} className="object-cover w-full h-full opacity-50" src="https://landingfoliocom.imgix.net/store/collection/dusk/images/noise.png" alt="Background noise" />
+                <Image height={100} width={100} className="object-cover w-full h-full opacity-10" src="https://images.pexels.com/photos/248921/pexels-photo-248921.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Background noise" />
             </div>
 
             <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">

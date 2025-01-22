@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const AboutUs = () => {
     return (
-        <div className="pt-2 -z-10 pb-12 bg-gray-100 sm:py-16 lg:py-20 xl:py-24">
+        <div className="pt-2 -z-10 pb-12 bg-gray-50 sm:py-16 lg:py-20 xl:py-24">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                 <div className="grid md:text-center lg:text-left items-center max-w-3xl grid-cols-1 mx-auto lg:grid-cols-2 lg:gap-x-20 gap-y-12 lg:max-w-none lg:mx-0">
                     <div>

@@ -93,7 +93,7 @@ const Work = () => {
 
                             <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-gray-900 rounded-xl font-pj">3</div>
                             <TextFade direction='up'>
-                                <p className="mt-5 text-xl text-center font-medium text-gray-900 font-pj">Cash on devlivery and product acquired.</p>
+                                <p className="mt-5 text-xl text-center font-medium text-gray-900 font-pj">Cash on delivery and product acquired.</p>
                             </TextFade>
                         </div>
                     </div>

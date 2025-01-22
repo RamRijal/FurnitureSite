@@ -37,6 +37,28 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId));//filters only the items that doesnt match the productID with the itemId i.e the item which you select for removal gives off a ID and then the Id from the previously set array of cartItems is examined and if same, gives the  new array without the same ID item
     };
 
+    // const increaseAmount = ({product.id}) => {
+    //     const cartItem = cartItems.find((item) => item.id === id);
+    //     addToCart(cartItem, id);
+    // };
+
+    // // decrease amount
+    // const decreaseAmount = (id) => {
+    //     const cartItem = cart.find((item) => item.id === id);
+    //     if (cartItem) {
+    //         const newCart = cart.map((item) => {
+    //             if (item.id === id) {
+    //                 return { ...item, amount: cartItem.amount - 1 };
+    //             } else {
+    //                 return item;
+    //             }
+    //         });
+    //         setCart(newCart);
+    //     }
+    //     if (cartItem.amount < 2) {
+    //         removeFromCart(id);
+    //     }
+    // };
     return (
         <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
             {children}

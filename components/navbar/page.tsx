@@ -9,6 +9,7 @@ import Instagram from '/public/instagram-svgrepo-com.svg'
 import Location from '/public/location-svgrepo-com.svg'
 import WhatsApp from '/public/whatsapp-svgrepo-com.svg'
 import { usePathname } from 'next/navigation'
+import { BiMinus, BiPlus, BiTrash } from 'react-icons/bi'
 
 const NavBar = () => {
     const pathname = usePathname(); // Initialize useRouter
@@ -28,6 +29,7 @@ const NavBar = () => {
     const calculateNetAmount = () => {
         return calculateTotal() - calculateDeliveryCharge();
     };
+
 
     // Add/remove body class based on `expandCart` state
     useEffect(() => {
@@ -213,7 +215,7 @@ const NavBar = () => {
             {/* SIDEBAR ADDTOCART */}
             <div
                 id="drawer-navigation"
-                className={`fixed top-0 right-0 z-50 w-96 h-screen p-4 bg-white overflow-y-auto overflow-x-hidden  dark:bg-slate-800 transform transition-transform duration-300 ${expandCart ? 'translate-x-0' : 'translate-x-full'
+                className={`fixed top-0 right-0 z-50 w-[400px] h-screen p-4 bg-white overflow-y-auto overflow-x-hidden  dark:bg-slate-800 transform transition-transform duration-300 ${expandCart ? 'translate-x-0' : 'translate-x-full'
                     }`}
                 aria-labelledby="drawer-navigation-label"
             >
@@ -279,30 +281,49 @@ const NavBar = () => {
                                     return <li key={item.id}>
 
                                         <div className="flex gap-3 w-full">
-                                            <Image alt='' src={item.image} height={100} className='object-cover h-24' width={100} />
+                                            <Image alt='' src={item.image} height={100} className='object-cover h-28' width={100} />
                                             <div className="flex justify-between w-full ">
                                                 <div className="flex flex-col text-left gap-1">
                                                     <span className="text-xl">{item.name}</span>
                                                     <span className=" text-xs -mt-1 text-gray-400 font-light">{item.category}</span>
-                                                    <span className=" text-sm ">Ratings:&nbsp;{item.rating}/5</span>
-                                                    <span className=" text-sm">No. of items:&nbsp;{item.quantity}</span>
+                                                    <span className=" text-sm  my-1 ">Ratings:&nbsp;{item.rating}/5</span>
+                                                    {/* hhhhhh */}
+                                                    <div className="flex flex-1 max-w-[100px] items-center justify-around h-full border text-primary font-medium">
+                                                        <div onClick={() => decreaseAmount(item.id)} className="
+                                                        bg-gray-500 h-full flex-1 flex justify-center items-center cursor-pointer">
+                                                            <BiMinus size={30} className=' ' />
+                                                        </div>
+                                                        <div className="h-full w-20 flex justify-center items-center ">
+                                                            {item.quantity}
+                                                        </div>
+                                                        <div onClick={() => increaseAmount(item.id)} className="bg-gray-500 h-full flex flex-1 justify-center items-center cursor-pointer">
+                                                            <BiPlus size={30} className=' p-1' />
+                                                        </div>
+                                                    </div>
+                                                    {/* //////////// */}
                                                 </div>
                                                 <p className='flex justify-center items-center text-3xl text-green-600'>${item.price * item.quantity}</p>
                                             </div>
                                         </div>
 
-                                        <button onClick={() => removeFromCart(`${item.id}`)} className=" bg-[#328981] hover:bg-[#237e75] hover:scale-105 p-3 flex justify-center items-center text-center w-full text-base">Remove from cart</button>
+                                        <button onClick={() => removeFromCart(`${item.id}`)} className=" bg-[#328981] hover:bg-[#237e75] hover:scale-105 p-3 my-3 flex justify-center items-center text-center w-full text-base">Remove from cart</button>
                                     </li>
                                 })
                                 }
                             </ul>
 
                         </div>
-                        <div className=" w-full">
+                        <div className="p-2 fixed bottom-0 w-96 bg-slate-700 opacity-100">
                             <div className="flex flex-col gap-2 my-2">
                                 <p className='text-xl'> Total Amount: ${`${calculateTotal()}`}</p>
                                 <p className='text-xl'> Delivery Charge: ${`${calculateDeliveryCharge()}`}</p>
-                                <p className='text-xl'> Net Amount: ${`${calculateNetAmount()}`}</p>
+                                <div className="flex justify-between items-center ">
+                                    <p className='text-xl'> Net Amount: ${`${calculateNetAmount()}`}</p>
+                                    <button onClick={() => removeFromCart}>
+                                        <BiTrash size={22} className='text-red-500' />
+                                    </button>
+
+                                </div>
                             </div>
                             <div className="button  w-full">
                                 <Link href={'/checkout'}>
