@@ -7,6 +7,8 @@ interface CartContextProps {
     cartItems: Product[];
     addToCart: (product: Product, quantity: number) => void;
     removeFromCart: (productId: string) => void;
+    increaseQuantity: (productId: string) => void;
+    decreaseQuantity: (productId: string) => void;
 }
 
 // Creates context
@@ -22,23 +24,38 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
             if (existingItem) {
                 return prevItems.map(cartItem =>
                     cartItem.id === product.id
-                        ? { ...cartItem, quantity, totalPrice: (cartItem.quantity + 1) * cartItem.price }
+                        ? {
+                            ...cartItem,
+                            quantity: cartItem.quantity + quantity,
+                            totalPrice: (cartItem.quantity + 1) * cartItem.price
+                        }
                         : cartItem
                 );
             } else {
-                return [...prevItems, { ...product, quantity, totalPrice: product.price }];
+                return [...prevItems, { ...product, quantity, totalPrice: product.price * quantity }];
             }
         });
 
-        // setCartItems((prevItems) => [...prevItems, product]);//sets the cartItems with product being added ,along with the prev ones
     };
 
     const removeFromCart = (productId: string) => {
         setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId));//filters only the items that doesnt match the productID with the itemId i.e the item which you select for removal gives off a ID and then the Id from the previously set array of cartItems is examined and if same, gives the  new array without the same ID item
     };
 
+    const increaseQuantity = (productId: string) => {
+        setCartItems((prevItems) => prevItems.map((item) =>
+            item.id === productId ?
+                { ...item, quantity: item.quantity + 1, totalPrice: (item.quantity + 1) * item.price }
+                : item))
+    }
+    const decreaseQuantity = (productId: string) => {
+        setCartItems((prevItems) => prevItems.map((item) =>
+            item.id === productId && item.quantity > 1 ?
+                { ...item, quantity: item.quantity - 1, totalPrice: (item.quantity - 1) * item.price }
+                : item))
+    }
     return (
-        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, increaseQuantity, decreaseQuantity }}>
             {children}
         </CartContext.Provider>
     );

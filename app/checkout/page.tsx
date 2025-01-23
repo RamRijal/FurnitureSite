@@ -1,6 +1,5 @@
 'use client'
 import ShoppingCart from '@/UI/ShoppingCart'
-import Stepper from '@/UI/Stepper'
 import { TextFade } from '@/UI/TextFadeUp'
 import Image from 'next/image'
 const Checkout = () => {

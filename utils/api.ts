@@ -589,9 +589,10 @@ export const category = [
 ];
 
 export const priceRanges = [
+  { label: "All", range: [0,0] },
   { label: "$500 - $1000", range: [500, 1000] },
-  { label: "$1000 - $1500", range: [1001, 1500] },
-  { label: "$1500 - $2000", range: [1501, 2000] },
-  { label: "$2000 - $10000", range: [2001, 10000] },
-  { label: "$1000 - $50000", range: [10001, 50000] },
+  { label: "$1000 - $1500", range: [1000, 1500] },
+  { label: "$1500 - $2000", range: [1500, 2000] },
+  { label: "$2000 - $10000", range: [2000, 10000] },
+  { label: "$1000 - $50000", range: [10000, 50000] },
 ];

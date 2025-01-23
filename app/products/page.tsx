@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 const Products = () => {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
     const [fetchedProducts, setFetchedProducts] = useState<Product[]>([]);
-    
+
     useEffect(() => {
         const OurProducts = async () => {
             const products = await getProducts();
@@ -18,9 +18,9 @@ const Products = () => {
         }
         OurProducts();
     }, [])
-    
-    
-   
+
+
+
     return (
         <div className="py-12 bg-gray-50 sm:py-16 lg:py-20">
             <div className="px-4 flex justify-center items-center mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -31,8 +31,9 @@ const Products = () => {
                     </TextFade>
                 </div>
             </div>
-
-            <Categories products={fetchedProducts} onFilter={setFilteredProducts} />
+            <div className="hidden md:block">
+                <Categories products={fetchedProducts} onFilter={setFilteredProducts} />
+            </div>
             <ProductList products={filteredProducts} />
 
         </div>
