@@ -1,13 +1,13 @@
 'use client';
 
+import { CartProvider } from "@/context/cartContext";
+import { Loader } from "@/UI/Loader";
 import { Inter } from "next/font/google";
+import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 import Footer from "../components/footer/page";
 import NavBar from "../components/navbar/page";
 import "./globals.css";
-import { useEffect, useState, useCallback } from "react";
-import { usePathname } from "next/navigation";
-import { Loader } from "@/UI/Loader";
-import { CartProvider } from "@/context/cartContext";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -35,13 +35,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return () => clearTimeout(timer);
   }, [currentPath, startLoading]);
 
-   
+
 
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
         <CartProvider>
-         
+
           <NavBar />
           <main className=" relative">
             {isLoading ? (
@@ -52,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               children
             )}
           </main>
+
           <Footer />
         </CartProvider>
       </body>
