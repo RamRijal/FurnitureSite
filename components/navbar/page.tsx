@@ -3,18 +3,18 @@ import { useCart } from '@/context/cartContext'
 import Logo from '@/public/Furphing.png'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import { BiMinus, BiPlus, BiTrash } from 'react-icons/bi'
 import Cart from '/public/cart-shopping-svgrepo-com.svg'
 import Instagram from '/public/instagram-svgrepo-com.svg'
 import Location from '/public/location-svgrepo-com.svg'
 import WhatsApp from '/public/whatsapp-svgrepo-com.svg'
-import { usePathname } from 'next/navigation'
-import { BiMinus, BiPlus, BiTrash } from 'react-icons/bi'
 
 const NavBar = () => {
     const pathname = usePathname(); // Initialize useRouter
 
-    const { cartItems, removeFromCart } = useCart();
+    const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
 
     const [expand, setExpand] = useState(false);
     const [expandCart, setExpandCart] = useState(false);
@@ -59,7 +59,7 @@ const NavBar = () => {
 
     return (
         <>
-            <header className="py-4 bg-white z-50" >
+            <header className="sticky top-0 py-4 bg-white z-50 shadow-md" >
                 <div className="px-4 mx-auto max-w-9xl sm:px-6 md:px-10 lg:px-12">
                     <div className="flex items-center justify-between">
                         {/* LOGO */}
@@ -215,13 +215,13 @@ const NavBar = () => {
             {/* SIDEBAR ADDTOCART */}
             <div
                 id="drawer-navigation"
-                className={`fixed top-0 right-0 z-50 w-[400px] h-screen p-4 bg-white overflow-y-auto overflow-x-hidden  dark:bg-slate-800 transform transition-transform duration-300 ${expandCart ? 'translate-x-0' : 'translate-x-full'
+                className={`fixed top-0 right-0 z-50 w-[410px] h-screen p-4 bg-white overflow-y-auto overflow-x-hidden  dark:bg-slate-800 transform transition-transform duration-300 ${expandCart ? 'translate-x-0' : 'translate-x-full'
                     }`}
                 aria-labelledby="drawer-navigation-label"
             >
                 <h5
                     id="drawer-navigation-label"
-                    className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
+                    className="text-base pb-2 font-semibold text-gray-500 uppercase dark:text-gray-400"
                 >
                     Review Cart
                 </h5>
@@ -258,45 +258,42 @@ const NavBar = () => {
                         >
                             Explore all products
                         </Link>
-                        {/* <div className=" w-full">
-                            <div className="flex flex-col gap-2 my-2">
-                                <p className='text-xl'> Total Amount: ${`${calculateTotal()}`}</p>
-                                <p className='text-xl'> Delivery Charge: ${`${calculateDeliveryCharge()}`}</p>
-                                <p className='text-xl'> Net Amount: ${`${calculateNetAmount()}`}</p>
-                            </div>
-                            <div className="button absolute w-full">
-                                <Link href={'/checkout'}>
-                                    <button onClick={() => alert("Proceeding to checkout..")} className='bg-green-600 p-3 flex justify-center items-center text-center w-full text-lg'>
-                                        Proceed to checkout
-                                    </button>
-                                </Link>
-                            </div>
-                        </div> */}
+
                     </div>
                     :
                     <>
-                        <div className="py-4 ">
+                        <div
+                            className="flex overflow-y-auto py-4 "
+                            style={{ maxHeight: `calc(100vh - 160px)` }}
+                        // Subtract height of total and checkout section
+                        >
                             <ul className="flex flex-col space-y-2 font-medium gap-4 my-2">
                                 {cartItems.map((item) => {
                                     return <li key={item.id}>
 
                                         <div className="flex gap-3 w-full">
-                                            <Image alt='' src={item.image} height={100} className='object-cover h-28' width={100} />
+                                            <Image
+                                                alt=''
+                                                src={item.image}
+                                                height={100}
+                                                className='object-cover h-28'
+                                                width={100}
+                                            />
                                             <div className="flex justify-between w-full ">
                                                 <div className="flex flex-col text-left gap-1">
                                                     <span className="text-xl">{item.name}</span>
                                                     <span className=" text-xs -mt-1 text-gray-400 font-light">{item.category}</span>
                                                     <span className=" text-sm  my-1 ">Ratings:&nbsp;{item.rating}/5</span>
-                                                    {/* hhhhhh */}
+                                                    {/* QUANTITY */}
                                                     <div className="flex flex-1 max-w-[100px] items-center justify-around h-full border text-primary font-medium">
-                                                        <div onClick={() => decreaseAmount(item.id)} className="
+                                                        <div onClick={() => decreaseQuantity(item.id)} className="
                                                         bg-gray-500 h-full flex-1 flex justify-center items-center cursor-pointer">
                                                             <BiMinus size={30} className=' ' />
                                                         </div>
                                                         <div className="h-full w-20 flex justify-center items-center ">
                                                             {item.quantity}
                                                         </div>
-                                                        <div onClick={() => increaseAmount(item.id)} className="bg-gray-500 h-full flex flex-1 justify-center items-center cursor-pointer">
+                                                        <div onClick={() => increaseQuantity(item.id)} className="bg-gray-500 h-full flex flex-1 justify-center items-center cursor-pointer">
                                                             <BiPlus size={30} className=' p-1' />
                                                         </div>
                                                     </div>
@@ -313,7 +310,7 @@ const NavBar = () => {
                             </ul>
 
                         </div>
-                        <div className="p-2 fixed bottom-0 w-96 bg-slate-700 opacity-100">
+                        <div className="p-4 sticky bottom-0 w-full bg-slate-700 opacity-100">
                             <div className="flex flex-col gap-2 my-2">
                                 <p className='text-xl'> Total Amount: ${`${calculateTotal()}`}</p>
                                 <p className='text-xl'> Delivery Charge: ${`${calculateDeliveryCharge()}`}</p>

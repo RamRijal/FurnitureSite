@@ -17,7 +17,7 @@ const Work = () => {
                     <div className="relative flex-1 w-full  shadow-slate-200 shadow-2xl overflow-hidden bg-white border border-gray-200 rounded-2xl">
                         <div className="flex flex-col py-8 px-9 justify-center items-center">
                             <Image loading='lazy' className='py-5 h-36 w-36 md:h-44 md:w-44' alt='' src={Contact} height={150} width={150} />
-                            <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-gray-900 rounded-xl font-pj">1</div>
+                            <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-[#51B7AE] rounded-xl font-pj">1</div>
                             <TextFade direction='up'>
                                 <p className="mt-5 text-center text-xl font-medium text-gray-900 font-pj">Choose the best furniture and add to your cart.</p>
                             </TextFade>
@@ -54,7 +54,7 @@ const Work = () => {
                             <div className="flex flex-col py-8 px-9 justify-center items-center">
                                 <Image loading='lazy' className='py-5  h-36 w-36 md:h-44 md:w-44' alt='' src={Delivery} height={150} width={150} />
 
-                                <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-gray-900 rounded-xl font-pj">2</div>
+                                <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-[#51B7AE]  rounded-xl font-pj">2</div>
                                 <TextFade direction='up'>
                                     <p className="mt-5 text-center text-xl font-medium text-gray-900 font-pj">Our delivery service brings the products at your doorstep.</p>
                                 </TextFade>
@@ -91,7 +91,7 @@ const Work = () => {
                         <div className="flex flex-col py-8 px-9 justify-center items-center">
                             <Image loading='lazy' className='py-5 h-36 w-36 md:h-44 md:w-44' alt='' src={Recieved} height={150} width={150} />
 
-                            <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-gray-900 rounded-xl font-pj">3</div>
+                            <div className="inline-flex items-center justify-center w-10 h-10 text-base font-bold text-white bg-[#51B7AE]  rounded-xl font-pj">3</div>
                             <TextFade direction='up'>
                                 <p className="mt-5 text-xl text-center font-medium text-gray-900 font-pj">Cash on delivery and product acquired.</p>
                             </TextFade>

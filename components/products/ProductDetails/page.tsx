@@ -37,7 +37,7 @@ const ProductDetails = ({ product }: IproductProps) => {
       setCart([...cart, { item: product, quantity }]);
     }
 
-    toast.success("Product added to cart!", { position: "top-center" });
+    toast.success("Product added to cart!", { position: "bottom-right" });
 
   };
   return (
@@ -144,7 +144,7 @@ const ProductDetails = ({ product }: IproductProps) => {
 
               <div className=''>
                 <h1 className=' font-semibold text-xl text-gray-900'>No of items:</h1>
-                <NoOfItems onChange={setQuantity} />
+                <NoOfItems productId={product.id} onChange={setQuantity} />
               </div>
               <div className="mt-5 sm:mt-5 sm:flex sm:items-center sm:space-x-5">
                 {/* Add to cart */}

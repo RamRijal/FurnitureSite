@@ -7,6 +7,3 @@ color schemes:
 #fccf17 --> light yellow
 #fec20f --> dark yellow
 #edebd9 --> creamy beige
-
-decrease/increase in CART
-Use NOofItems ko logic but maintain consistency sabai ma naya naya component not expected

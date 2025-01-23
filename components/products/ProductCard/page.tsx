@@ -23,7 +23,7 @@ const ProductCard = ({ product }: IproductProps) => {
 
   const showToastMessage = () => {
     toast.success("Product added to cart.", {
-      position: "top-center"
+      position: "bottom-right"
     });
   };
 
@@ -43,33 +43,35 @@ const ProductCard = ({ product }: IproductProps) => {
         </Link >
       </div>
 
-      <div className="flex flex-col my-4 px-2 gap-1">
+      <div className="flex flex-col my-2 px-2 gap-1">
         {/* NAME AND PRICE */}
-        <div className="flex justify-between items-center ">
-          <div className="flex gap-3 items-center ">
+        <div className="flex-col md:flex md:flex-row md:justify-between items-center text-left ">
+          <div className="flex md:flex w-full justify-between md:justify-normal text-left md:gap-2  ">
             <Link
               className="text-xl font-bold text-gray-900"
               href={`/products/${product.id}`}
               title={product.name}
             >
-              <p className="text-2xl font-bold text-gray-900">
+              <p className="flex-1 text-2xl font-bold text-gray-900">
                 {product.name}
               </p>
             </Link>
-            <div className="flex w-20 justify-between items-center my-1 ">
+            <div className="flex  justify-between items-center my-1 ">
               {RatingsDisplay(product.rating)}
             </div>
           </div>
-          <p className=" text-3xl font-bold text-green-600">
-            ${product.price}
-          </p>
+          <div className="">
+            <p className=" text-3xl font-bold py-2 md:m-0 text-green-600">
+              ${product.price}
+            </p>
+          </div>
         </div>
         {/* CATEGORY AND RATINGS */}
 
         <div className="flex mt-2 justify-between ">
           <div className="flex flex-col -mt-2">
             <div className="flex -mt-2 mb-1">
-              <p className="bg-black bg-opacity-15 flex rounded-full px-3  py-1.5 mt-1  text-xs font-medium text-white">
+              <p className="bg-black bg-opacity-15 flex rounded-full px-3  py-1.5 mt-1  text-xs text-nowrap font-medium text-white">
                 {product.category}
               </p>
             </div>

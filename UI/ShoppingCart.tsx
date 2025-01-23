@@ -4,7 +4,7 @@ import Link from "next/link";
 import { BiSolidChevronLeft, BiTrash } from "react-icons/bi";
 
 const ShoppingCart = () => {
-    const { cartItems, removeFromCart } = useCart();
+    const { cartItems, removeFromCart, increaseQuantity, decreaseQuantity } = useCart();
 
     const calculateTotal = () => {
         return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
@@ -15,10 +15,11 @@ const ShoppingCart = () => {
             {/* Shopping Cart Section */}
             <div className="w-full lg:w-3/5 bg-white shadow-md rounded-lg p-6">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Shopping Cart</h2>
-                <table className="w-full text-gray-700 border-collapse">
-                    <thead className="border-y-2 border-black">
+                <table className="w-full  text-gray-700 border-collapse">
+                    <thead className="border-y-2  border-black">
                         <tr>
                             <th className="py-3 text-left">Product</th>
+                            <th className="py-3 text-left">Price</th>
                             <th className="py-3 text-center">Category</th>
                             <th className="py-3 text-center">Quantity</th>
                             <th className="py-3 text-left">Total Price</th>
@@ -27,8 +28,8 @@ const ShoppingCart = () => {
                     </thead>
                     <tbody>
                         {cartItems.map((item, index) => (
-                            <tr key={index} className="border-b hover:bg-gray-200 ">
-                                <td className="py-4 flex items-center gap-4 w-24">
+                            <tr key={index} className="border-b  hover:bg-gray-200 ">
+                                <td className="py-4 flex items-center gap-4 w-full">
                                     <Image
                                         alt={item.name}
                                         src={item.image}
@@ -38,8 +39,13 @@ const ShoppingCart = () => {
                                     />
                                     <div>
                                         <p className="font-medium">{item.name}</p>
-                                        <p className="text-xs text-gray-500 w-full text-justify">{item.category}</p>
                                         <p className="text-sm text-gray-500 w-full text-justify">{item.description}</p>
+                                    </div>
+                                </td>
+
+                                <td className="py-4 ">
+                                    <div className="flex text-center">
+                                        <p className="text-sm text-gray-500 w-full text-center">$&nbsp;{item.price}</p>
                                     </div>
                                 </td>
 
@@ -51,22 +57,22 @@ const ShoppingCart = () => {
 
                                 <td className="py-4 text-center">
                                     <div className="flex items-center justify-center gap-2">
-                                        <button className="w-8 h-8 bg-white border rounded flex items-center justify-center">
+                                        <button onClick={() => decreaseQuantity(item.id)} className="w-8 h-8 bg-white border rounded flex items-center justify-center">
                                             -
                                         </button>
                                         <span>{item.quantity}</span>
-                                        <button className="w-8 h-8 bg-white border rounded flex items-center justify-center">
+                                        <button onClick={() => increaseQuantity(item.id)} className="w-8 h-8 bg-white border rounded flex items-center justify-center">
                                             +
                                         </button>
                                     </div>
                                 </td>
-                                <td className="py-4 text-center">${(item.price * item.quantity).toFixed(2)}</td>
+                                <td className="py-4 text-center text-green-600 font-semibold">${(item.price * item.quantity).toFixed(2)}</td>
                                 <td className="py-4 text-center">
                                     <button
                                         onClick={() => removeFromCart(item.id)}
                                         className="text-red-500 font-bold"
                                     >
-                                        <BiTrash size={20}/>
+                                        <BiTrash size={20} />
                                     </button>
                                 </td>
                             </tr>
